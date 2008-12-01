@@ -1,0 +1,28 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Login</th>
+    <th>Email</th>
+    <th>Login count</th>
+    <th>Last request at</th>
+    <th>Last login at</th>
+    <th>Current login at</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.login %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.login_count %></td>
+    <td><%=h user.last_request_at %></td>
+    <td><%=h user.last_login_at %></td>
+    <td><%=h user.current_login_at %></td>
+    <td><%= link_to 'show', user %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

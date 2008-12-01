@@ -1,0 +1,22 @@
+<h1>join</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+	<p>
+    <%= f.password_field :password %>password<br>
+    <%= f.password_field :password_confirmation %>confirm password
+  </p>
+  <p>
+    <%= f.submit "join" %>
+  </p>
+<% end %>
+
