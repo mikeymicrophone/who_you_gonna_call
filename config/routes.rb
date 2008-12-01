@@ -1,4 +1,58 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :authorizations
+
+  map.resources :services
+
+  map.resources :alias_uses
+
+  map.resources :aliases
+
+  map.resources :establishments
+
+  map.resources :details
+
+  map.resources :parties
+
+  map.resources :guests
+
+  map.resources :rendezvouzs
+
+  map.resources :visits
+
+  map.resources :messages
+
+  map.resources :txts
+
+  map.resources :calls
+
+  map.resources :website_uses
+
+  map.resources :websites
+
+  map.resources :email_uses
+
+  map.resources :emails
+
+  map.resources :address_uses
+
+  map.resources :countries
+
+  map.resources :states
+
+  map.resources :cities
+
+  map.resources :zips
+
+  map.resources :streets
+
+  map.resources :addresses
+
+  map.resources :units
+
+  map.resources :phone_uses
+
+  map.resources :phones
+
   map.resources :users
 
   map.resources :people

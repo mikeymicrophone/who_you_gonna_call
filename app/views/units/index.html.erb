@@ -1,0 +1,26 @@
+<h1>Listing units</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Address</th>
+    <th>Line2</th>
+    <th>Creator</th>
+  </tr>
+
+<% for unit in @units %>
+  <tr>
+    <td><%=h unit.number %></td>
+    <td><%=h unit.address_id %></td>
+    <td><%=h unit.line2 %></td>
+    <td><%=h unit.creator_id %></td>
+    <td><%= link_to 'Show', unit %></td>
+    <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+    <td><%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New unit', new_unit_path %>

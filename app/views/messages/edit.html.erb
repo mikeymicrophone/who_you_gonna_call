@@ -1,0 +1,28 @@
+<h1>Editing message</h1>
+
+<% form_for(@message) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :time %><br />
+    <%= f.datetime_select :time %>
+  </p>
+  <p>
+    <%= f.label :service_id %><br />
+    <%= f.text_field :service_id %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @message %> |
+<%= link_to 'Back', messages_path %>

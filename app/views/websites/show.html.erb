@@ -1,0 +1,18 @@
+<p>
+  <b>Href:</b>
+  <%=h @website.href %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @website.name %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @website.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>

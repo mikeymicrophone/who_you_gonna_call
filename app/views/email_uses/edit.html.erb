@@ -1,0 +1,28 @@
+<h1>Editing email_use</h1>
+
+<% form_for(@email_use) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email_id %><br />
+    <%= f.text_field :email_id %>
+  </p>
+  <p>
+    <%= f.label :target_type %><br />
+    <%= f.text_field :target_type %>
+  </p>
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @email_use %> |
+<%= link_to 'Back', email_uses_path %>

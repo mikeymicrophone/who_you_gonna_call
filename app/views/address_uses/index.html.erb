@@ -1,0 +1,28 @@
+<h1>Listing address_uses</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Unit</th>
+    <th>Target type</th>
+    <th>Target</th>
+    <th>Creator</th>
+  </tr>
+
+<% for address_use in @address_uses %>
+  <tr>
+    <td><%=h address_use.address_id %></td>
+    <td><%=h address_use.unit_id %></td>
+    <td><%=h address_use.target_type %></td>
+    <td><%=h address_use.target_id %></td>
+    <td><%=h address_use.creator_id %></td>
+    <td><%= link_to 'Show', address_use %></td>
+    <td><%= link_to 'Edit', edit_address_use_path(address_use) %></td>
+    <td><%= link_to 'Destroy', address_use, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New address_use', new_address_use_path %>

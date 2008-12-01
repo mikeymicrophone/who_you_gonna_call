@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: MyString
+  area_code: MyString
+  country_code: MyString
+  name: MyString
+  creator_id: 1
+
+two:
+  number: MyString
+  area_code: MyString
+  country_code: MyString
+  name: MyString
+  creator_id: 1

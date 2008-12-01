@@ -1,0 +1,28 @@
+<p>
+  <b>Number:</b>
+  <%=h @phone.number %>
+</p>
+
+<p>
+  <b>Area code:</b>
+  <%=h @phone.area_code %>
+</p>
+
+<p>
+  <b>Country code:</b>
+  <%=h @phone.country_code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @phone.name %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @phone.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_phone_path(@phone) %> |
+<%= link_to 'Back', phones_path %>

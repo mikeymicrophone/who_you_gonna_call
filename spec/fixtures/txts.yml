@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time: 2008-12-01 17:29:39
+  phone_id: 1
+  status: MyString
+  creator_id: 1
+
+two:
+  time: 2008-12-01 17:29:39
+  phone_id: 1
+  status: MyString
+  creator_id: 1

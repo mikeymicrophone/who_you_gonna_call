@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @city.name %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @city.state_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @city.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

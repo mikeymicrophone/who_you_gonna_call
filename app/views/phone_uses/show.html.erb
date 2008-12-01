@@ -1,0 +1,23 @@
+<p>
+  <b>Phone:</b>
+  <%=h @phone_use.phone_id %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @phone_use.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @phone_use.target_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @phone_use.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_phone_use_path(@phone_use) %> |
+<%= link_to 'Back', phone_uses_path %>

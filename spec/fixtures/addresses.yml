@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  street_number: MyString
+  street_id: 1
+  line2: MyString
+  zip_id: 1
+  creator_id: 1
+
+two:
+  street_number: MyString
+  street_id: 1
+  line2: MyString
+  zip_id: 1
+  creator_id: 1

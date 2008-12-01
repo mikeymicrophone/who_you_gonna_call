@@ -1,0 +1,23 @@
+<p>
+  <b>Content:</b>
+  <%=h @detail.content %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @detail.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @detail.target_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @detail.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_detail_path(@detail) %> |
+<%= link_to 'Back', details_path %>

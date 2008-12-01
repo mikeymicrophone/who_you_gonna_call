@@ -1,0 +1,23 @@
+<p>
+  <b>Time:</b>
+  <%=h @visit.time %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @visit.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @visit.target_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @visit.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_visit_path(@visit) %> |
+<%= link_to 'Back', visits_path %>

@@ -1,0 +1,28 @@
+<h1>Listing addresses</h1>
+
+<table>
+  <tr>
+    <th>Street number</th>
+    <th>Street</th>
+    <th>Line2</th>
+    <th>Zip</th>
+    <th>Creator</th>
+  </tr>
+
+<% for address in @addresses %>
+  <tr>
+    <td><%=h address.street_number %></td>
+    <td><%=h address.street_id %></td>
+    <td><%=h address.line2 %></td>
+    <td><%=h address.zip_id %></td>
+    <td><%=h address.creator_id %></td>
+    <td><%= link_to 'Show', address %></td>
+    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New address', new_address_path %>

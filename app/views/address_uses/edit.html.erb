@@ -1,0 +1,32 @@
+<h1>Editing address_use</h1>
+
+<% form_for(@address_use) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :address_id %><br />
+    <%= f.text_field :address_id %>
+  </p>
+  <p>
+    <%= f.label :unit_id %><br />
+    <%= f.text_field :unit_id %>
+  </p>
+  <p>
+    <%= f.label :target_type %><br />
+    <%= f.text_field :target_type %>
+  </p>
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @address_use %> |
+<%= link_to 'Back', address_uses_path %>

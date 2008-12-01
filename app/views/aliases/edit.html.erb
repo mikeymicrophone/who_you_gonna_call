@@ -1,0 +1,24 @@
+<h1>Editing alias</h1>
+
+<% form_for(@alias) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :service_id %><br />
+    <%= f.text_field :service_id %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @alias %> |
+<%= link_to 'Back', aliases_path %>

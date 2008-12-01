@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @alias.name %>
+</p>
+
+<p>
+  <b>Service:</b>
+  <%=h @alias.service_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @alias.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_alias_path(@alias) %> |
+<%= link_to 'Back', aliases_path %>

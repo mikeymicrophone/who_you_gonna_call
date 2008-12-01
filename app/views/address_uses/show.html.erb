@@ -1,0 +1,28 @@
+<p>
+  <b>Address:</b>
+  <%=h @address_use.address_id %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%=h @address_use.unit_id %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @address_use.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @address_use.target_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @address_use.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_use_path(@address_use) %> |
+<%= link_to 'Back', address_uses_path %>

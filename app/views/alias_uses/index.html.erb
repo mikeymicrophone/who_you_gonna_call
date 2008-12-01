@@ -1,0 +1,26 @@
+<h1>Listing alias_uses</h1>
+
+<table>
+  <tr>
+    <th>Alias</th>
+    <th>Target type</th>
+    <th>Target</th>
+    <th>Creator</th>
+  </tr>
+
+<% for alias_use in @alias_uses %>
+  <tr>
+    <td><%=h alias_use.alias_id %></td>
+    <td><%=h alias_use.target_type %></td>
+    <td><%=h alias_use.target_id %></td>
+    <td><%=h alias_use.creator_id %></td>
+    <td><%= link_to 'Show', alias_use %></td>
+    <td><%= link_to 'Edit', edit_alias_use_path(alias_use) %></td>
+    <td><%= link_to 'Destroy', alias_use, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New alias_use', new_alias_use_path %>

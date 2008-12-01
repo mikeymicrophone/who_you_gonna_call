@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: MyString
+  address_id: 1
+  line2: MyString
+  creator_id: 1
+
+two:
+  number: MyString
+  address_id: 1
+  line2: MyString
+  creator_id: 1

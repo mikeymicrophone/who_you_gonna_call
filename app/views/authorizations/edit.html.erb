@@ -1,0 +1,28 @@
+<h1>Editing authorization</h1>
+
+<% form_for(@authorization) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :target_type %><br />
+    <%= f.text_field :target_type %>
+  </p>
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @authorization %> |
+<%= link_to 'Back', authorizations_path %>

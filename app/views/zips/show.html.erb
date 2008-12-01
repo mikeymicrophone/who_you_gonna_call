@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @zip.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @zip.city_id %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @zip.state_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @zip.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_zip_path(@zip) %> |
+<%= link_to 'Back', zips_path %>

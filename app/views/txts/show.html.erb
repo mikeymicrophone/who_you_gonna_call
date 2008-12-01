@@ -1,0 +1,23 @@
+<p>
+  <b>Time:</b>
+  <%=h @txt.time %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @txt.phone_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @txt.status %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @txt.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_txt_path(@txt) %> |
+<%= link_to 'Back', txts_path %>

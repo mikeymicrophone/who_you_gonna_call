@@ -1,0 +1,28 @@
+<p>
+  <b>Time:</b>
+  <%=h @party.time %>
+</p>
+
+<p>
+  <b>Until:</b>
+  <%=h @party.until %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @party.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @party.target_id %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @party.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_party_path(@party) %> |
+<%= link_to 'Back', parties_path %>

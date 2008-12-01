@@ -1,0 +1,28 @@
+<h1>Listing phones</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Area code</th>
+    <th>Country code</th>
+    <th>Name</th>
+    <th>Creator</th>
+  </tr>
+
+<% for phone in @phones %>
+  <tr>
+    <td><%=h phone.number %></td>
+    <td><%=h phone.area_code %></td>
+    <td><%=h phone.country_code %></td>
+    <td><%=h phone.name %></td>
+    <td><%=h phone.creator_id %></td>
+    <td><%= link_to 'Show', phone %></td>
+    <td><%= link_to 'Edit', edit_phone_path(phone) %></td>
+    <td><%= link_to 'Destroy', phone, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New phone', new_phone_path %>

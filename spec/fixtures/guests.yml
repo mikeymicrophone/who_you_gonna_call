@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  person_id: 1
+  target_type: MyString
+  target_id: 1
+  status: MyString
+  creator_id: 1
+
+two:
+  person_id: 1
+  target_type: MyString
+  target_id: 1
+  status: MyString
+  creator_id: 1

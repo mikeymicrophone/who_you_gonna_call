@@ -1,0 +1,22 @@
+<h1>Listing establishments</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Creator</th>
+  </tr>
+
+<% for establishment in @establishments %>
+  <tr>
+    <td><%=h establishment.name %></td>
+    <td><%=h establishment.creator_id %></td>
+    <td><%= link_to 'Show', establishment %></td>
+    <td><%= link_to 'Edit', edit_establishment_path(establishment) %></td>
+    <td><%= link_to 'Destroy', establishment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New establishment', new_establishment_path %>

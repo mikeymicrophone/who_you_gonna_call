@@ -1,0 +1,24 @@
+<h1>Editing website</h1>
+
+<% form_for(@website) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :href %><br />
+    <%= f.text_field :href %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @website %> |
+<%= link_to 'Back', websites_path %>

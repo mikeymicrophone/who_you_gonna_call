@@ -1,0 +1,28 @@
+<h1>Editing website_use</h1>
+
+<% form_for(@website_use) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :website_id %><br />
+    <%= f.text_field :website_id %>
+  </p>
+  <p>
+    <%= f.label :target_type %><br />
+    <%= f.text_field :target_type %>
+  </p>
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.label :creator_id %><br />
+    <%= f.text_field :creator_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @website_use %> |
+<%= link_to 'Back', website_uses_path %>

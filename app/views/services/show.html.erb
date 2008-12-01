@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @service.name %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @service.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

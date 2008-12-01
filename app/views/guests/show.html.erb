@@ -1,0 +1,28 @@
+<p>
+  <b>Person:</b>
+  <%=h @guest.person_id %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @guest.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @guest.target_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @guest.status %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @guest.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_guest_path(@guest) %> |
+<%= link_to 'Back', guests_path %>

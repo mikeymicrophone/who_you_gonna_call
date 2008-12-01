@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  content: MyText
+  target_type: MyString
+  target_id: 1
+  creator_id: 1
+
+two:
+  content: MyText
+  target_type: MyString
+  target_id: 1
+  creator_id: 1

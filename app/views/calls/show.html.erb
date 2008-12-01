@@ -1,0 +1,28 @@
+<p>
+  <b>Time:</b>
+  <%=h @call.time %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @call.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @call.target_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @call.status %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @call.creator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>
