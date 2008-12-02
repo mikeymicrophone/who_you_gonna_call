@@ -9,6 +9,12 @@ class Call < ActiveRecord::Base
       %w[ person phone phone_use establishment ]
     when :capitalized
       %w[ Person Phone PhoneUse Establishment ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "call: #{target.name}"
   end
 end

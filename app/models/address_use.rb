@@ -15,6 +15,16 @@ class AddressUse < ActiveRecord::Base
       %w[ establishment party person phone rendezvouz service website ]
     when :capitalized
       %w[ Establishment Party Person Phone Rendezvouz Service Website ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def location
+    unit || address
+  end
+  
+  def name
+    "#{spot.name}~#{target.name}"
   end
 end

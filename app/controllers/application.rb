@@ -70,4 +70,5 @@ class ActiveRecord::Base
     self.creator ||= current_user
   end
   before_create :credit_creator
+  
 end

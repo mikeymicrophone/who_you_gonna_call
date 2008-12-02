@@ -1,4 +1,4 @@
-<h1>Listing users</h1>
+<h1>users</h1>
 
 <table>
   <tr>
@@ -12,13 +12,12 @@
 
 <% for user in @users %>
   <tr>
-    <td><%=h user.login %></td>
+    <td><%= link_to_name user %></td>
     <td><%=h user.email %></td>
     <td><%=h user.login_count %></td>
     <td><%=h user.last_request_at %></td>
     <td><%=h user.last_login_at %></td>
     <td><%=h user.current_login_at %></td>
-    <td><%= link_to 'show', user %></td>
   </tr>
 <% end %>
 </table>

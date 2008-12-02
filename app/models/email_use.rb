@@ -7,6 +7,12 @@ class EmailUse < ActiveRecord::Base
       %w[ person establishment city state ]
     when :capitalized
       %w[ Person Establishment City State ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "#{target.name} at #{email.name}"
   end
 end

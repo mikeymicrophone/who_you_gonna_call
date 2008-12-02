@@ -11,14 +11,11 @@
     <%= f.label :state_id %><br />
     <%= f.text_field :state_id %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @city %> |
-<%= link_to 'Back', cities_path %>
+<%= link_to 'show', @city %> |
+<%= back_link %>

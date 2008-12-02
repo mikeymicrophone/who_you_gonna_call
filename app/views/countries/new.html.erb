@@ -7,13 +7,10 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', countries_path %>
+<%= back_link %>

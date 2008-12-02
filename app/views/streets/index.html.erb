@@ -1,20 +1,16 @@
-<h1>Listing streets</h1>
+<h1>streets</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>City</th>
-    <th>Creator</th>
+    <th></th>
+    <th>city</th>
+
   </tr>
 
 <% for street in @streets %>
   <tr>
-    <td><%=h street.name %></td>
-    <td><%=h street.city_id %></td>
-    <td><%=h street.creator_id %></td>
-    <td><%= link_to 'Show', street %></td>
-    <td><%= link_to 'Edit', edit_street_path(street) %></td>
-    <td><%= link_to 'Destroy', street, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name street %></td>
+    <td><%= link_to_name street.city %></td>
   </tr>
 <% end %>
 </table>

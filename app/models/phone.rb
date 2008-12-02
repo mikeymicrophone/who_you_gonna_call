@@ -7,4 +7,8 @@ class Phone < ActiveRecord::Base
   has_many :calls, :as => :target
   has_many :details, :as => :target
   has_many :website_uses, :as => :target
+  
+  def other_name
+    "#{area_code} #{number}"
+  end
 end

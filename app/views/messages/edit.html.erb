@@ -15,14 +15,11 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @message %> |
-<%= link_to 'Back', messages_path %>
+<%= link_to 'show', @message %> |
+<%= back_link %>

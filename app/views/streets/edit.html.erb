@@ -11,14 +11,11 @@
     <%= f.label :city_id %><br />
     <%= f.text_field :city_id %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @street %> |
-<%= link_to 'Back', streets_path %>
+<%= link_to 'show', @street %> |
+<%= back_link %>

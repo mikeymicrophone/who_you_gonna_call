@@ -19,14 +19,11 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @phone %> |
-<%= link_to 'Back', phones_path %>
+<%= link_to 'show', @phone %> |
+<%= back_link %>

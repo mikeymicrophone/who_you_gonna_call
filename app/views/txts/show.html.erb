@@ -1,11 +1,11 @@
 <p>
   <b>Time:</b>
-  <%=h @txt.time %>
+  <%=h @txt.time.strftime("%I:%M %p %A %m/%d") %>
 </p>
 
 <p>
   <b>Phone:</b>
-  <%=h @txt.phone_id %>
+  <%= link_to_name @txt.phone %>
 </p>
 
 <p>
@@ -13,11 +13,8 @@
   <%=h @txt.status %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @txt.creator_id %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_txt_path(@txt) %> |
-<%= link_to 'Back', txts_path %>
+<%= back_link %>

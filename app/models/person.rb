@@ -14,4 +14,8 @@ class Person < ActiveRecord::Base
   has_many :email_uses, :as => :target
   has_many :website_uses, :as => :target
   has_many :visits, :as => :target
+  
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -1,22 +1,18 @@
-<h1>Listing rendezvouzs</h1>
+<h1>rendezvouzs</h1>
 
 <table>
   <tr>
     <th>Time</th>
-    <th>Target type</th>
     <th>Target</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for rendezvouz in @rendezvouzs %>
   <tr>
     <td><%=h rendezvouz.time %></td>
-    <td><%=h rendezvouz.target_type %></td>
-    <td><%=h rendezvouz.target_id %></td>
-    <td><%=h rendezvouz.creator_id %></td>
-    <td><%= link_to 'Show', rendezvouz %></td>
-    <td><%= link_to 'Edit', edit_rendezvouz_path(rendezvouz) %></td>
-    <td><%= link_to 'Destroy', rendezvouz, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name rendezvouz.target %></td>
+
+    <td><%= link_to 'show', rendezvouz %></td>
   </tr>
 <% end %>
 </table>

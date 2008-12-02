@@ -1,11 +1,11 @@
-<h1>Listing messages</h1>
+<h1>messages</h1>
 
 <table>
   <tr>
     <th>Time</th>
     <th>Service</th>
     <th>Status</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for message in @messages %>
@@ -13,8 +13,8 @@
     <td><%=h message.time %></td>
     <td><%=h message.service_id %></td>
     <td><%=h message.status %></td>
-    <td><%=h message.creator_id %></td>
-    <td><%= link_to 'Show', message %></td>
+
+    <td><%= link_to 'show', message %></td>
     <td><%= link_to 'Edit', edit_message_path(message) %></td>
     <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

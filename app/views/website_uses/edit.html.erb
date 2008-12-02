@@ -15,14 +15,11 @@
     <%= f.label :target_id %><br />
     <%= f.text_field :target_id %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @website_use %> |
-<%= link_to 'Back', website_uses_path %>
+<%= link_to 'show', @website_use %> |
+<%= back_link %>

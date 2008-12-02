@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
   has_many :websites, :foreign_key => :creator_id
   has_many :website_uses, :foreign_key => :creator_id
   has_many :zips, :foreign_key => :creator_id
+  
+  def name
+    login
+  end
 end

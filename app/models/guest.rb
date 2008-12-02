@@ -10,6 +10,12 @@ class Guest < ActiveRecord::Base
       %w[ rendezvouz visit party ]
     when :capitalized
       %w[ Rendezvouz Visit Party ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "guest: #{person.name} at #{target.name}"
   end
 end

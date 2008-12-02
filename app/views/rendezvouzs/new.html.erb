@@ -7,21 +7,22 @@
     <%= f.label :time %><br />
     <%= f.datetime_select :time %>
   </p>
-  <p>
-    <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
-  </p>
-  <p>
-    <%= f.label :target_id %><br />
-    <%= f.text_field :target_id %>
-  </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  <% unless @rendezvouz.target %>
+	  <p>
+	    <%= f.select :target_type, Rendezvouz.targets(:select) %>
+	  </p>
+	  <p>
+	    <%= f.label :target_id %>
+	    <%= f.text_field :target_id %>
+	  </p>
+  <% else %>
+	  <%= f.hidden_field :target_type %>
+	  <%= f.hidden_field :target_id %>
+  <% end %>  
+  
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', rendezvouzs_path %>
+<%= back_link %>

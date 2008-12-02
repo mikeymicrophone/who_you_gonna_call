@@ -18,11 +18,8 @@
   <%=h @guest.status %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @guest.creator_id %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_guest_path(@guest) %> |
-<%= link_to 'Back', guests_path %>
+<%= back_link %>

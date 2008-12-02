@@ -1,11 +1,9 @@
 <p>
-  <b>Number:</b>
   <%=h @unit.number %>
 </p>
 
 <p>
-  <b>Address:</b>
-  <%=h @unit.address_id %>
+  <%= link_to_name @unit.address %>
 </p>
 
 <p>
@@ -13,11 +11,5 @@
   <%=h @unit.line2 %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @unit.creator_id %>
-</p>
-
-
 <%= link_to 'Edit', edit_unit_path(@unit) %> |
-<%= link_to 'Back', units_path %>
+<%= back_link %>

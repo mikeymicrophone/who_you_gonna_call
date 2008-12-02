@@ -1,23 +1,10 @@
 <p>
-  <b>Website:</b>
-  <%=h @website_use.website_id %>
+  <%= link_to_name @website_use.website %>
 </p>
 
 <p>
-  <b>Target type:</b>
-  <%=h @website_use.target_type %>
+  <%= link_to_name @website_use.target %>
 </p>
-
-<p>
-  <b>Target:</b>
-  <%=h @website_use.target_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @website_use.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_website_use_path(@website_use) %> |
-<%= link_to 'Back', website_uses_path %>
+<%= back_link %>

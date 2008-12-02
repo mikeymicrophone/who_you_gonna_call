@@ -1,28 +1,17 @@
 <p>
   <b>Time:</b>
-  <%=h @party.time %>
+  <%=h @party.time.strftime("%I:%M %p %A %m/%d") %>
 </p>
 
 <p>
   <b>Until:</b>
-  <%=h @party.until %>
+  <%=h @party.until.strftime("%I:%M %p") %>
 </p>
 
 <p>
-  <b>Target type:</b>
-  <%=h @party.target_type %>
+  <b>location:</b>
+  <%= link_to_name @party.target %>
 </p>
-
-<p>
-  <b>Target:</b>
-  <%=h @party.target_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @party.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_party_path(@party) %> |
-<%= link_to 'Back', parties_path %>
+<%= back_link %>

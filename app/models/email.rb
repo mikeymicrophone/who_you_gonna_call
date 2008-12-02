@@ -3,4 +3,8 @@ class Email < ActiveRecord::Base
   
   has_many :details, :as => :target
   has_many :website_uses, :as => :target
+  
+  def name
+    address
+  end
 end

@@ -1,18 +1,10 @@
 <p>
-  <b>Name:</b>
   <%=h @street.name %>
 </p>
 
 <p>
-  <b>City:</b>
-  <%=h @street.city_id %>
+  <%= link_to_name @street.city %>
 </p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @street.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_street_path(@street) %> |
-<%= link_to 'Back', streets_path %>
+<%= back_link %>

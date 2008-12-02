@@ -1,13 +1,6 @@
 <p>
-  <b>Name:</b>
   <%=h @establishment.name %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @establishment.creator_id %>
-</p>
-
-
 <%= link_to 'Edit', edit_establishment_path(@establishment) %> |
-<%= link_to 'Back', establishments_path %>
+<%= back_link %>

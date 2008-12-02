@@ -7,13 +7,10 @@
     <%= f.label :address %><br />
     <%= f.text_field :address %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', emails_path %>
+<%= back_link %>

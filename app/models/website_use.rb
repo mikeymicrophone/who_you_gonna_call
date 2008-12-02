@@ -11,6 +11,12 @@ class WebsiteUse < ActiveRecord::Base
       %w[ address address_use alias city country detail email establishment message party person phone rendezvouz service state street unit ]
     when :capitalized
       %w[ Address AddressUse Alias City Country Detail Email Establishment Message Party Person Phone Rendezvouz Service State Street Unit ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "#{website.name}~#{target.name}"
   end
 end

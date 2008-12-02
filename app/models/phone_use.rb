@@ -10,6 +10,12 @@ class PhoneUse < ActiveRecord::Base
       %[ person establishment website city service unit address address_use website_use ]
     when :capitalized
       %[ Person Establishment Website City Service Unit Address AddressUse WebsiteUse ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "#{target.name}: #{phone.name}"
   end
 end

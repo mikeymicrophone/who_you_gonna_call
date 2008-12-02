@@ -1,22 +1,20 @@
-<h1>Listing details</h1>
+<h1>details</h1>
 
 <table>
   <tr>
     <th>Content</th>
     <th>Target type</th>
     <th>Target</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for detail in @details %>
   <tr>
     <td><%=h detail.content %></td>
     <td><%=h detail.target_type %></td>
-    <td><%=h detail.target_id %></td>
-    <td><%=h detail.creator_id %></td>
-    <td><%= link_to 'Show', detail %></td>
-    <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
-    <td><%= link_to 'Destroy', detail, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name detail.target %></td>
+
+    <td><%= link_to 'show', detail %></td>
   </tr>
 <% end %>
 </table>

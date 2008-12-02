@@ -15,14 +15,11 @@
     <%= f.label :line2 %><br />
     <%= f.text_field :line2 %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @unit %> |
-<%= link_to 'Back', units_path %>
+<%= link_to 'show', @unit %> |
+<%= back_link %>

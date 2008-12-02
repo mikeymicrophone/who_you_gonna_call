@@ -1,23 +1,10 @@
 <p>
-  <b>Email:</b>
-  <%=h @email_use.email_id %>
+  <%= link_to_name @email_use.email %>
 </p>
 
 <p>
-  <b>Target type:</b>
-  <%=h @email_use.target_type %>
+  <%= link_to_name @email_use.target %>
 </p>
-
-<p>
-  <b>Target:</b>
-  <%=h @email_use.target_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @email_use.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_email_use_path(@email_use) %> |
-<%= link_to 'Back', email_uses_path %>
+<%= back_link %>

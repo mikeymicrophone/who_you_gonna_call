@@ -4,4 +4,8 @@ class Website < ActiveRecord::Base
   has_many :address_uses, :as => :target
   has_many :details, :as => :target
   has_many :phone_uses, :as => :target
+  
+  def other_name
+    href
+  end
 end

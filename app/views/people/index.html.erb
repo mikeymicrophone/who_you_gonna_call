@@ -1,4 +1,4 @@
-<h1>Listing people</h1>
+<h1>people</h1>
 
 <table>
   <tr>
@@ -13,9 +13,8 @@
     <td><%=h person.first_name %></td>
     <td><%=h person.middle_name %></td>
     <td><%=h person.last_name %></td>
-    <td><%=h person.user_id %></td>
+    <td><%= link_to_name person.user %></td>
     <td><%= link_to 'show', person %></td>
-    <td><%= link_to 'edit', edit_person_path(person) %></td>
   </tr>
 <% end %>
 </table>

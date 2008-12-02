@@ -1,6 +1,7 @@
 class City < ActiveRecord::Base
   belongs_to :state
   has_many :streets
+  has_many :zips
   has_many :addresses, :through => :streets
   
   has_many :details, :as => :target

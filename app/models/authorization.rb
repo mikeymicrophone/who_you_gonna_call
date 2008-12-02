@@ -8,6 +8,12 @@ class Authorization < ActiveRecord::Base
       %w[ person phone detail ]
     when :capitalized
       %w[ Person Phone Detail ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "#{user.name} a: #{target.name}"
   end
 end

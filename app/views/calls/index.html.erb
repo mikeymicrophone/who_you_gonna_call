@@ -1,24 +1,20 @@
-<h1>Listing calls</h1>
+<h1>calls</h1>
 
 <table>
   <tr>
     <th>Time</th>
-    <th>Target type</th>
     <th>Target</th>
     <th>Status</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for call in @calls %>
   <tr>
-    <td><%=h call.time %></td>
-    <td><%=h call.target_type %></td>
-    <td><%=h call.target_id %></td>
+    <td><%=h call.time.strftime("%I:%M %p %A %m/%d") %></td>
+    <td><%= link_to_name call.target %></td>
     <td><%=h call.status %></td>
-    <td><%=h call.creator_id %></td>
-    <td><%= link_to 'Show', call %></td>
-    <td><%= link_to 'Edit', edit_call_path(call) %></td>
-    <td><%= link_to 'Destroy', call, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td><%= link_to 'show', call %></td>
   </tr>
 <% end %>
 </table>

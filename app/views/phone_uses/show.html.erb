@@ -1,23 +1,12 @@
 <p>
   <b>Phone:</b>
-  <%=h @phone_use.phone_id %>
+  <%= link_to_name @phone_use.phone %>
 </p>
 
 <p>
-  <b>Target type:</b>
-  <%=h @phone_use.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @phone_use.target_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @phone_use.creator_id %>
+  <%= link_to_name @phone_use.target %>
 </p>
 
 
 <%= link_to 'Edit', edit_phone_use_path(@phone_use) %> |
-<%= link_to 'Back', phone_uses_path %>
+<%= back_link %>

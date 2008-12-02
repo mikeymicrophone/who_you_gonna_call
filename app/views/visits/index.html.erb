@@ -1,22 +1,19 @@
-<h1>Listing visits</h1>
+<h1>visits</h1>
 
 <table>
   <tr>
-    <th>Time</th>
-    <th>Target type</th>
-    <th>Target</th>
-    <th>Creator</th>
+    <th>earliest</th>
+    <th>latest</th>
+
   </tr>
 
 <% for visit in @visits %>
   <tr>
-    <td><%=h visit.time %></td>
-    <td><%=h visit.target_type %></td>
-    <td><%=h visit.target_id %></td>
-    <td><%=h visit.creator_id %></td>
-    <td><%= link_to 'Show', visit %></td>
-    <td><%= link_to 'Edit', edit_visit_path(visit) %></td>
-    <td><%= link_to 'Destroy', visit, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h visit.earliest_time.strftime("%I:%M %p %A %m/%d") %></td>
+    <td><%=h visit.latest_time.strftime("%I:%M %p %A %m/%d") %></td>
+    <td><%= link_to_name visit.target %></td>
+
+    <td><%= link_to 'show', visit %></td>
   </tr>
 <% end %>
 </table>

@@ -11,21 +11,22 @@
     <%= f.label :until %><br />
     <%= f.datetime_select :until %>
   </p>
-  <p>
-    <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
-  </p>
-  <p>
-    <%= f.label :target_id %><br />
-    <%= f.text_field :target_id %>
-  </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  <% unless @party.target %>
+	  <p>
+	    <%= f.select :target_type, Party.targets(:select) %>
+	  </p>
+	  <p>
+	    <%= f.label :target_id %>
+	    <%= f.text_field :target_id %>
+	  </p>
+  <% else %>
+	  <%= f.hidden_field :target_type %>
+	  <%= f.hidden_field :target_id %>
+  <% end %>  
+  
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', parties_path %>
+<%= back_link %>

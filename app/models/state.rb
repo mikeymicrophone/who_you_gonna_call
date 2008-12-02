@@ -1,5 +1,6 @@
 class State < ActiveRecord::Base
   has_many :cities
+  has_many :zips
   belongs_to :country
   has_many :streets, :through => :cities
   

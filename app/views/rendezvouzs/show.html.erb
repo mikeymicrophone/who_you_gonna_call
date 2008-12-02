@@ -1,23 +1,12 @@
 <p>
-  <b>Time:</b>
-  <%=h @rendezvouz.time %>
+  <b>time:</b>
+  <%=h @rendezvouz.time.strftime("%I:%M %p %A %m/%d") %>
 </p>
 
 <p>
-  <b>Target type:</b>
-  <%=h @rendezvouz.target_type %>
+  <b>location:</b>
+  <%= link_to_name @rendezvouz.target %>
 </p>
-
-<p>
-  <b>Target:</b>
-  <%=h @rendezvouz.target_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @rendezvouz.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_rendezvouz_path(@rendezvouz) %> |
-<%= link_to 'Back', rendezvouzs_path %>
+<%= back_link %>

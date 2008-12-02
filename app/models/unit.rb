@@ -8,4 +8,8 @@ class Unit < ActiveRecord::Base
   has_many :rendezvouzs, :as => :target
   has_many :website_uses, :as => :target
   has_many :visits, :as => :target
+  
+  def name
+    number
+  end
 end

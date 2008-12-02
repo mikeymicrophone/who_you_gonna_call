@@ -1,22 +1,20 @@
-<h1>Listing txts</h1>
+<h1>txts</h1>
 
 <table>
   <tr>
     <th>Time</th>
     <th>Phone</th>
     <th>Status</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for txt in @txts %>
   <tr>
-    <td><%=h txt.time %></td>
-    <td><%=h txt.phone_id %></td>
+    <td><%=h txt.time.strftime("%I:%M %p %A %m/%d") %></td>
+    <td><%= link_to_name txt.phone %></td>
     <td><%=h txt.status %></td>
-    <td><%=h txt.creator_id %></td>
-    <td><%= link_to 'Show', txt %></td>
-    <td><%= link_to 'Edit', edit_txt_path(txt) %></td>
-    <td><%= link_to 'Destroy', txt, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td><%= link_to 'show', txt %></td>
   </tr>
 <% end %>
 </table>

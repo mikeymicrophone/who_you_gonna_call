@@ -1,22 +1,20 @@
-<h1>Listing authorizations</h1>
+<h1>authorizations</h1>
 
 <table>
   <tr>
     <th>User</th>
     <th>Target type</th>
     <th>Target</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for authorization in @authorizations %>
   <tr>
-    <td><%=h authorization.user_id %></td>
+    <td><%= link_to_name authorization.user %></td>
     <td><%=h authorization.target_type %></td>
-    <td><%=h authorization.target_id %></td>
-    <td><%=h authorization.creator_id %></td>
-    <td><%= link_to 'Show', authorization %></td>
-    <td><%= link_to 'Edit', edit_authorization_path(authorization) %></td>
-    <td><%= link_to 'Destroy', authorization, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name authorization.target %></td>
+
+    <td><%= link_to 'show', authorization %></td>
   </tr>
 <% end %>
 </table>

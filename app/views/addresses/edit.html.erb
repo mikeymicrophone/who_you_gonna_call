@@ -19,14 +19,11 @@
     <%= f.label :zip_id %><br />
     <%= f.text_field :zip_id %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @address %> |
-<%= link_to 'Back', addresses_path %>
+<%= link_to 'show', @address %> |
+<%= back_link %>

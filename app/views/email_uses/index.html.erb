@@ -1,22 +1,18 @@
-<h1>Listing email_uses</h1>
+<h1>email_uses</h1>
 
 <table>
   <tr>
     <th>Email</th>
-    <th>Target type</th>
     <th>Target</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for email_use in @email_uses %>
   <tr>
-    <td><%=h email_use.email_id %></td>
-    <td><%=h email_use.target_type %></td>
-    <td><%=h email_use.target_id %></td>
-    <td><%=h email_use.creator_id %></td>
-    <td><%= link_to 'Show', email_use %></td>
-    <td><%= link_to 'Edit', edit_email_use_path(email_use) %></td>
-    <td><%= link_to 'Destroy', email_use, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name email_use.email %></td>
+    <td><%= link_to_name email_use.target %></td>
+
+    <td><%= link_to 'show', email_use %></td>
   </tr>
 <% end %>
 </table>

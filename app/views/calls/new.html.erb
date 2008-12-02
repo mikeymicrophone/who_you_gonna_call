@@ -7,25 +7,27 @@
     <%= f.label :time %><br />
     <%= f.datetime_select :time %>
   </p>
-  <p>
-    <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
-  </p>
-  <p>
-    <%= f.label :target_id %><br />
-    <%= f.text_field :target_id %>
-  </p>
+  <% unless @call.target %>
+	  <p>
+	    <%= f.select :target_type, Call.targets(:select) %>
+	  </p>
+	  <p>
+	    <%= f.label :target_id %>
+	    <%= f.text_field :target_id %>
+	  </p>
+  <% else %>
+	  <%= f.hidden_field :target_type %>
+	  <%= f.hidden_field :target_id %>
+  <% end %>  
+
   <p>
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </p>
-  <p>
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </p>
+  
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', calls_path %>
+<%= back_link %>

@@ -1,20 +1,18 @@
-<h1>Listing aliases</h1>
+<h1>aliases</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Service</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for alias in @aliases %>
   <tr>
     <td><%=h alias.name %></td>
-    <td><%=h alias.service_id %></td>
-    <td><%=h alias.creator_id %></td>
-    <td><%= link_to 'Show', alias %></td>
-    <td><%= link_to 'Edit', edit_alias_path(alias) %></td>
-    <td><%= link_to 'Destroy', alias, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name alias.service %></td>
+
+    <td><%= link_to 'show', alias %></td>
   </tr>
 <% end %>
 </table>

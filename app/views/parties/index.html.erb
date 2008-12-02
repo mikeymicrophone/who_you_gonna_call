@@ -1,24 +1,20 @@
-<h1>Listing parties</h1>
+<h1>parties</h1>
 
 <table>
   <tr>
     <th>Time</th>
     <th>Until</th>
-    <th>Target type</th>
     <th>Target</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for party in @parties %>
   <tr>
-    <td><%=h party.time %></td>
-    <td><%=h party.until %></td>
-    <td><%=h party.target_type %></td>
-    <td><%=h party.target_id %></td>
-    <td><%=h party.creator_id %></td>
-    <td><%= link_to 'Show', party %></td>
-    <td><%= link_to 'Edit', edit_party_path(party) %></td>
-    <td><%= link_to 'Destroy', party, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h party.time.strftime("%I:%M %A %m/%d") %></td>
+    <td><%=h party.until.strftime("%I:%M %p") %></td>
+    <td><%= link_to_name party.target %></td>
+
+    <td><%= link_to 'show', party %></td>
   </tr>
 <% end %>
 </table>

@@ -1,23 +1,15 @@
 <p>
-  <b>Time:</b>
-  <%=h @visit.time %>
+  <b>earliest:</b>
+  <%=h @visit.earliest_time.strftime("%I:%M %p %A %m/%d") %>
 </p>
-
 <p>
-  <b>Target type:</b>
-  <%=h @visit.target_type %>
+  <b>latest:</b>
+  <%=h @visit.latest_time.strftime("%I:%M %p %A %m/%d") %>
 </p>
-
 <p>
-  <b>Target:</b>
-  <%=h @visit.target_id %>
-</p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @visit.creator_id %>
+  <%= link_to_name @visit.target %>
 </p>
-
 
 <%= link_to 'Edit', edit_visit_path(@visit) %> |
-<%= link_to 'Back', visits_path %>
+<%= back_link %>

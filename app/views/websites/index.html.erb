@@ -1,20 +1,18 @@
-<h1>Listing websites</h1>
+<h1>websites</h1>
 
 <table>
   <tr>
     <th>Href</th>
     <th>Name</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for website in @websites %>
   <tr>
-    <td><%=h website.href %></td>
+    <td><%= link_to website.href, website.href %></td>
     <td><%=h website.name %></td>
-    <td><%=h website.creator_id %></td>
-    <td><%= link_to 'Show', website %></td>
-    <td><%= link_to 'Edit', edit_website_path(website) %></td>
-    <td><%= link_to 'Destroy', website, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td><%= link_to 'show', website %></td>
   </tr>
 <% end %>
 </table>

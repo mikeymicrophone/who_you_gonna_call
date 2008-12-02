@@ -1,4 +1,4 @@
-<h1>Listing guests</h1>
+<h1>guests</h1>
 
 <table>
   <tr>
@@ -6,19 +6,16 @@
     <th>Target type</th>
     <th>Target</th>
     <th>Status</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for guest in @guests %>
   <tr>
-    <td><%=h guest.person_id %></td>
-    <td><%=h guest.target_type %></td>
-    <td><%=h guest.target_id %></td>
+    <td><%= link_to_name guest.person %></td>
+    <td><%= link_to_name guest.target %></td>
     <td><%=h guest.status %></td>
-    <td><%=h guest.creator_id %></td>
-    <td><%= link_to 'Show', guest %></td>
-    <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-    <td><%= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td><%= link_to 'show', guest %></td>
   </tr>
 <% end %>
 </table>

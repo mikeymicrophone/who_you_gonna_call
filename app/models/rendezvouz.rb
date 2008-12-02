@@ -12,6 +12,12 @@ class Rendezvouz < ActiveRecord::Base
       %w[ address address_use establishment unit street ]
     when :capitalized
       %w[ Address AddressUse Establishment Unit Street ]
+    when :select
+      targets.zip targets(:capitalized)
     end
+  end
+  
+  def name
+    "rendezvouz: #{time.strftime("%A")} at #{target.name}"
   end
 end

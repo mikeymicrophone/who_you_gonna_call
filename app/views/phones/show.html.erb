@@ -18,11 +18,5 @@
   <%=h @phone.name %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @phone.creator_id %>
-</p>
-
-
 <%= link_to 'Edit', edit_phone_path(@phone) %> |
-<%= link_to 'Back', phones_path %>
+<%= back_link %>

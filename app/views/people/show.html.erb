@@ -14,10 +14,9 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%=h @person.user_id %>
+  <%= link_to_name @person.user %>
 </p>
 
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<%= back_link %>

@@ -1,23 +1,7 @@
 <p>
-  <b>User:</b>
-  <%=h @authorization.user_id %>
+  <%= link_to_name @authorization.user %>
+  <%= link_to_name @authorization.target %>
 </p>
-
-<p>
-  <b>Target type:</b>
-  <%=h @authorization.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @authorization.target_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @authorization.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_authorization_path(@authorization) %> |
-<%= link_to 'Back', authorizations_path %>
+<%= back_link %>

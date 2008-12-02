@@ -1,11 +1,11 @@
 <p>
   <b>Time:</b>
-  <%=h @message.time %>
+  <%=h @message.time.strftime("%I:%M %p on %A %m/%d") %>
 </p>
 
 <p>
   <b>Service:</b>
-  <%=h @message.service_id %>
+  <%= link_to_name @message.service %>
 </p>
 
 <p>
@@ -13,11 +13,6 @@
   <%=h @message.status %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @message.creator_id %>
-</p>
-
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<%= back_link %>

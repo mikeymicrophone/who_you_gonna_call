@@ -1,22 +1,18 @@
-<h1>Listing phone_uses</h1>
+<h1>phone_uses</h1>
 
 <table>
   <tr>
     <th>Phone</th>
-    <th>Target type</th>
     <th>Target</th>
-    <th>Creator</th>
+
   </tr>
 
 <% for phone_use in @phone_uses %>
   <tr>
-    <td><%=h phone_use.phone_id %></td>
-    <td><%=h phone_use.target_type %></td>
-    <td><%=h phone_use.target_id %></td>
-    <td><%=h phone_use.creator_id %></td>
-    <td><%= link_to 'Show', phone_use %></td>
-    <td><%= link_to 'Edit', edit_phone_use_path(phone_use) %></td>
-    <td><%= link_to 'Destroy', phone_use, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name phone_use.phone %></td>
+    <td><%= link_to_name phone_use.target %></td>
+
+    <td><%= link_to 'show', phone_use %></td>
   </tr>
 <% end %>
 </table>

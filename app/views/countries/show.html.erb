@@ -1,13 +1,7 @@
 <p>
-  <b>Name:</b>
   <%=h @country.name %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @country.creator_id %>
 </p>
 
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'Back', countries_path %>
+<%= back_link %>
