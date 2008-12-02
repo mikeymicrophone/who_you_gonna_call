@@ -3,6 +3,10 @@
 <% form_for(@message) do |f| %>
   <%= f.error_messages %>
 
+	<p>
+		<%= f.label :person_id %>
+		<%= f.text_field :person_id %>
+	</p>
   <p>
     <%= f.label :time %><br />
     <%= f.datetime_select :time %>

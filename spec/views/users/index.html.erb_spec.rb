@@ -32,9 +32,6 @@ describe "/users/index.html.erb" do
     render "/users/index.html.erb"
     response.should have_tag("tr>td", "value for login", 2)
     response.should have_tag("tr>td", "value for email", 2)
-    response.should have_tag("tr>td", "value for crypted_password", 2)
-    response.should have_tag("tr>td", "value for password_salt", 2)
-    response.should have_tag("tr>td", "value for persistence_token", 2)
     response.should have_tag("tr>td", "1", 2)
     response.should have_tag("tr>td", "value for last_login_ip", 2)
     response.should have_tag("tr>td", "value for current_login_ip", 2)

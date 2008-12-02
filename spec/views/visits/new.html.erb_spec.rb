@@ -6,7 +6,7 @@ describe "/visits/new.html.erb" do
   before(:each) do
     assigns[:visit] = stub_model(Visit,
       :new_record? => true,
-      :target_type => "value for target_type"
+      :target_type => Visit.targets(:capitalized).first
     )
   end
 

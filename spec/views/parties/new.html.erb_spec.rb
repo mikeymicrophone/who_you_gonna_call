@@ -6,7 +6,7 @@ describe "/parties/new.html.erb" do
   before(:each) do
     assigns[:party] = stub_model(Party,
       :new_record? => true,
-      :target_type => "value for target_type"
+      :target_type => Party.targets(:capitalized).first
     )
   end
 

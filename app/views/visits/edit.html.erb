@@ -4,8 +4,12 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :time %><br />
-    <%= f.datetime_select :time %>
+    <%= f.label :earliest_time, 'earliest' %><br />
+    <%= f.datetime_select :earliest_time %>
+  </p>
+  <p>
+    <%= f.label :latest_time, 'latest' %><br />
+    <%= f.datetime_select :latest_time %>
   </p>
   <p>
     <%= f.label :target_type %><br />

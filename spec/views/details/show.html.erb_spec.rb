@@ -6,7 +6,7 @@ describe "/details/show.html.erb" do
   before(:each) do
     assigns[:detail] = @detail = stub_model(Detail,
       :content => "value for content",
-      :target_type => "value for target_type"
+      :target_type => Detail.targets(:capitalized).first
     )
   end
 

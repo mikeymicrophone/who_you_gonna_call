@@ -1,5 +1,6 @@
 class Visit < ActiveRecord::Base
   has_many :guests, :as => :target
+  belongs_to :target, :polymorphic => true
 
   def self.targets(format = :lowercase)
     case format

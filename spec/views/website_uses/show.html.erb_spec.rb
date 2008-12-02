@@ -5,7 +5,7 @@ describe "/website_uses/show.html.erb" do
   
   before(:each) do
     assigns[:website_use] = @website_use = stub_model(WebsiteUse,
-      :target_type => "value for target_type"
+      :target_type => WebsiteUse.targets(:capitalized).first
     )
   end
 

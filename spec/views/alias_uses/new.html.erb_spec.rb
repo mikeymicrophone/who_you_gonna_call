@@ -6,7 +6,7 @@ describe "/alias_uses/new.html.erb" do
   before(:each) do
     assigns[:alias_use] = stub_model(AliasUse,
       :new_record? => true,
-      :target_type => "value for target_type"
+      :target_type => AliasUse.targets(:capitalized).first
     )
   end
 

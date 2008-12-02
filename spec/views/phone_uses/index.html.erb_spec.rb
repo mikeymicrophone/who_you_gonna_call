@@ -6,17 +6,17 @@ describe "/phone_uses/index.html.erb" do
   before(:each) do
     assigns[:phone_uses] = [
       stub_model(PhoneUse,
-        :target_type => "value for target_type"
+        :target_type => PhoneUse.targets(:capitalized).first
       ),
       stub_model(PhoneUse,
-        :target_type => "value for target_type"
+        :target_type => PhoneUse.targets(:capitalized).first
       )
     ]
   end
 
   it "should render list of phone_uses" do
     render "/phone_uses/index.html.erb"
-    response.should have_tag("tr>td", "value for target_type", 2)
+    response.should have_tag("tr>td", PhoneUse.targets(:capitalized).first, 2)
   end
 end
 

@@ -6,7 +6,7 @@ describe "/address_uses/edit.html.erb" do
   before(:each) do
     assigns[:address_use] = @address_use = stub_model(AddressUse,
       :new_record? => false,
-      :target_type => "value for target_type"
+      :target_type => AddressUse.targets(:capitalized).first
     )
   end
 

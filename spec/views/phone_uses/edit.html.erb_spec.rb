@@ -6,7 +6,7 @@ describe "/phone_uses/edit.html.erb" do
   before(:each) do
     assigns[:phone_use] = @phone_use = stub_model(PhoneUse,
       :new_record? => false,
-      :target_type => "value for target_type"
+      :target_type => PhoneUse.targets(:capitalized).first
     )
   end
 

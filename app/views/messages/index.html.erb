@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+		<th>person</th>
     <th>Time</th>
     <th>Service</th>
     <th>Status</th>
@@ -10,13 +11,12 @@
 
 <% for message in @messages %>
   <tr>
-    <td><%=h message.time %></td>
-    <td><%=h message.service_id %></td>
+		<td><%= link_to_name message.person %></td>
+    <td><%=h message.time.strftime("%I %p %A %d") %></td>
+    <td><%= link_to_name message.service %></td>
     <td><%=h message.status %></td>
 
     <td><%= link_to 'show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
