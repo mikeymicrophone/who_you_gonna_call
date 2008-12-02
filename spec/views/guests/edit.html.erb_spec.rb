@@ -7,7 +7,7 @@ describe "/guests/edit.html.erb" do
     assigns[:guest] = @guest = stub_model(Guest,
       :new_record? => false,
       :target_type => "value for target_type",
-      :status => "value for status",
+      :status => "value for status"
     )
   end
 

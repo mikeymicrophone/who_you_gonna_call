@@ -6,7 +6,7 @@ describe "/establishments/edit.html.erb" do
   before(:each) do
     assigns[:establishment] = @establishment = stub_model(Establishment,
       :new_record? => false,
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

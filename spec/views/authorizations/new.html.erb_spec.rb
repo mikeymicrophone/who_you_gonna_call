@@ -6,7 +6,7 @@ describe "/authorizations/new.html.erb" do
   before(:each) do
     assigns[:authorization] = stub_model(Authorization,
       :new_record? => true,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

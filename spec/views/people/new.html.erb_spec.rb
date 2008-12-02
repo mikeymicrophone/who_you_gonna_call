@@ -8,7 +8,7 @@ describe "/people/new.html.erb" do
       :new_record? => true,
       :first_name => "value for first_name",
       :middle_name => "value for middle_name",
-      :last_name => "value for last_name",
+      :last_name => "value for last_name"
     )
   end
 

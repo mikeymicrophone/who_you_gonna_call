@@ -6,7 +6,7 @@ describe "/calls/show.html.erb" do
   before(:each) do
     assigns[:call] = @call = stub_model(Call,
       :target_type => "value for target_type",
-      :status => "value for status",
+      :status => "value for status"
     )
   end
 

@@ -7,11 +7,11 @@ describe "/details/index.html.erb" do
     assigns[:details] = [
       stub_model(Detail,
         :content => "value for content",
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       ),
       stub_model(Detail,
         :content => "value for content",
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       )
     ]
   end

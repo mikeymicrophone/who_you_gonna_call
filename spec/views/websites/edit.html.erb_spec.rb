@@ -7,7 +7,7 @@ describe "/websites/edit.html.erb" do
     assigns[:website] = @website = stub_model(Website,
       :new_record? => false,
       :href => "value for href",
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

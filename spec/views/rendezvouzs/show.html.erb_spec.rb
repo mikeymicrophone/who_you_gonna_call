@@ -5,7 +5,7 @@ describe "/rendezvouzs/show.html.erb" do
   
   before(:each) do
     assigns[:rendezvouz] = @rendezvouz = stub_model(Rendezvouz,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

@@ -5,7 +5,7 @@ describe "/alias_uses/show.html.erb" do
   
   before(:each) do
     assigns[:alias_use] = @alias_use = stub_model(AliasUse,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

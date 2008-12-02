@@ -6,10 +6,10 @@ describe "/parties/index.html.erb" do
   before(:each) do
     assigns[:parties] = [
       stub_model(Party,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       ),
       stub_model(Party,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       )
     ]
   end

@@ -6,10 +6,10 @@ describe "/zips/index.html.erb" do
   before(:each) do
     assigns[:zips] = [
       stub_model(Zip,
-        :name => "value for name",
+        :name => "value for name"
       ),
       stub_model(Zip,
-        :name => "value for name",
+        :name => "value for name"
       )
     ]
   end

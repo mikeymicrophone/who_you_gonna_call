@@ -6,7 +6,7 @@ describe "/emails/new.html.erb" do
   before(:each) do
     assigns[:email] = stub_model(Email,
       :new_record? => true,
-      :address => "value for address",
+      :address => "value for address"
     )
   end
 

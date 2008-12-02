@@ -6,7 +6,7 @@ describe "/website_uses/new.html.erb" do
   before(:each) do
     assigns[:website_use] = stub_model(WebsiteUse,
       :new_record? => true,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

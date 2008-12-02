@@ -7,7 +7,7 @@ describe "/calls/edit.html.erb" do
     assigns[:call] = @call = stub_model(Call,
       :new_record? => false,
       :target_type => "value for target_type",
-      :status => "value for status",
+      :status => "value for status"
     )
   end
 

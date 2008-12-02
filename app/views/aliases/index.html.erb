@@ -7,12 +7,10 @@
 
   </tr>
 
-<% for alias in @aliases %>
+<% for a in @aliases %>
   <tr>
-    <td><%=h alias.name %></td>
-    <td><%= link_to_name alias.service %></td>
-
-    <td><%= link_to 'show', alias %></td>
+    <td><%= link_to_name a %></td>
+    <td><%= link_to_name a.service %></td>
   </tr>
 <% end %>
 </table>

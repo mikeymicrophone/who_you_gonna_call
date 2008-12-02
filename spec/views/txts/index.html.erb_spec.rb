@@ -6,10 +6,10 @@ describe "/txts/index.html.erb" do
   before(:each) do
     assigns[:txts] = [
       stub_model(Txt,
-        :status => "value for status",
+        :status => "value for status"
       ),
       stub_model(Txt,
-        :status => "value for status",
+        :status => "value for status"
       )
     ]
   end

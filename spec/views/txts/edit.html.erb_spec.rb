@@ -6,7 +6,7 @@ describe "/txts/edit.html.erb" do
   before(:each) do
     assigns[:txt] = @txt = stub_model(Txt,
       :new_record? => false,
-      :status => "value for status",
+      :status => "value for status"
     )
   end
 

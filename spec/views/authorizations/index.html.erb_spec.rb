@@ -6,10 +6,10 @@ describe "/authorizations/index.html.erb" do
   before(:each) do
     assigns[:authorizations] = [
       stub_model(Authorization,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       ),
       stub_model(Authorization,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       )
     ]
   end

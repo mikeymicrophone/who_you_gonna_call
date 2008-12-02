@@ -7,11 +7,11 @@ describe "/addresses/index.html.erb" do
     assigns[:addresses] = [
       stub_model(Address,
         :street_number => "value for street_number",
-        :line2 => "value for line2",
+        :line2 => "value for line2"
       ),
       stub_model(Address,
         :street_number => "value for street_number",
-        :line2 => "value for line2",
+        :line2 => "value for line2"
       )
     ]
   end

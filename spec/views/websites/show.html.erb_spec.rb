@@ -6,7 +6,7 @@ describe "/websites/show.html.erb" do
   before(:each) do
     assigns[:website] = @website = stub_model(Website,
       :href => "value for href",
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

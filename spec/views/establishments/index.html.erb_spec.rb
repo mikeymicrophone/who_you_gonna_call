@@ -6,10 +6,10 @@ describe "/establishments/index.html.erb" do
   before(:each) do
     assigns[:establishments] = [
       stub_model(Establishment,
-        :name => "value for name",
+        :name => "value for name"
       ),
       stub_model(Establishment,
-        :name => "value for name",
+        :name => "value for name"
       )
     ]
   end

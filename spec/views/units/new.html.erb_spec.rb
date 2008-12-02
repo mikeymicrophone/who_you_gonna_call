@@ -7,7 +7,7 @@ describe "/units/new.html.erb" do
     assigns[:unit] = stub_model(Unit,
       :new_record? => true,
       :number => "value for number",
-      :line2 => "value for line2",
+      :line2 => "value for line2"
     )
   end
 

@@ -6,7 +6,7 @@ describe "/countries/edit.html.erb" do
   before(:each) do
     assigns[:country] = @country = stub_model(Country,
       :new_record? => false,
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

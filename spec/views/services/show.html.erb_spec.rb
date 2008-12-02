@@ -5,7 +5,7 @@ describe "/services/show.html.erb" do
   
   before(:each) do
     assigns[:service] = @service = stub_model(Service,
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

@@ -6,10 +6,10 @@ describe "/phone_uses/index.html.erb" do
   before(:each) do
     assigns[:phone_uses] = [
       stub_model(PhoneUse,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       ),
       stub_model(PhoneUse,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       )
     ]
   end

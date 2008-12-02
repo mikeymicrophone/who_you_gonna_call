@@ -7,7 +7,7 @@ describe "/addresses/edit.html.erb" do
     assigns[:address] = @address = stub_model(Address,
       :new_record? => false,
       :street_number => "value for street_number",
-      :line2 => "value for line2",
+      :line2 => "value for line2"
     )
   end
 

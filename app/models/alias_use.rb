@@ -1,8 +1,8 @@
 class AliasUse < ActiveRecord::Base
-  belongs_to :alias
+  belongs_to :alia, :class_name => 'Alias'
   belongs_to :person
   
   def name
-    "#{person.name} is #{alias.name}@#{alias.service.name}"
+    "#{person.name} is #{alia.name}@#{alia.service.name}"
   end
 end

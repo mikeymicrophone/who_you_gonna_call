@@ -5,7 +5,7 @@ describe "/parties/show.html.erb" do
   
   before(:each) do
     assigns[:party] = @party = stub_model(Party,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

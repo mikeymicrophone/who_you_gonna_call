@@ -6,7 +6,7 @@ describe "/email_uses/edit.html.erb" do
   before(:each) do
     assigns[:email_use] = @email_use = stub_model(EmailUse,
       :new_record? => false,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

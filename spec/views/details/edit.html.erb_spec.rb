@@ -7,7 +7,7 @@ describe "/details/edit.html.erb" do
     assigns[:detail] = @detail = stub_model(Detail,
       :new_record? => false,
       :content => "value for content",
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 

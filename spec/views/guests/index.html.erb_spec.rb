@@ -7,11 +7,11 @@ describe "/guests/index.html.erb" do
     assigns[:guests] = [
       stub_model(Guest,
         :target_type => "value for target_type",
-        :status => "value for status",
+        :status => "value for status"
       ),
       stub_model(Guest,
         :target_type => "value for target_type",
-        :status => "value for status",
+        :status => "value for status"
       )
     ]
   end

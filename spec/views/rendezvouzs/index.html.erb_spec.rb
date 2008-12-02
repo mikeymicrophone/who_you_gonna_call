@@ -6,10 +6,10 @@ describe "/rendezvouzs/index.html.erb" do
   before(:each) do
     assigns[:rendezvouzs] = [
       stub_model(Rendezvouz,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       ),
       stub_model(Rendezvouz,
-        :target_type => "value for target_type",
+        :target_type => "value for target_type"
       )
     ]
   end

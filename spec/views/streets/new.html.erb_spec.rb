@@ -6,7 +6,7 @@ describe "/streets/new.html.erb" do
   before(:each) do
     assigns[:street] = stub_model(Street,
       :new_record? => true,
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

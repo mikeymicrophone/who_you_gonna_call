@@ -6,7 +6,7 @@ describe "/units/show.html.erb" do
   before(:each) do
     assigns[:unit] = @unit = stub_model(Unit,
       :number => "value for number",
-      :line2 => "value for line2",
+      :line2 => "value for line2"
     )
   end
 

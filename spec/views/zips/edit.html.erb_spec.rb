@@ -6,7 +6,7 @@ describe "/zips/edit.html.erb" do
   before(:each) do
     assigns[:zip] = @zip = stub_model(Zip,
       :new_record? => false,
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

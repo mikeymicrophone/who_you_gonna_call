@@ -9,7 +9,7 @@ describe "/phones/new.html.erb" do
       :number => "value for number",
       :area_code => "value for area_code",
       :country_code => "value for country_code",
-      :name => "value for name",
+      :name => "value for name"
     )
   end
 

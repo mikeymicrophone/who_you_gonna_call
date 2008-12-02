@@ -5,7 +5,7 @@ describe "/messages/show.html.erb" do
   
   before(:each) do
     assigns[:message] = @message = stub_model(Message,
-      :status => "value for status",
+      :status => "value for status"
     )
   end
 

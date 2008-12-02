@@ -7,11 +7,11 @@ describe "/websites/index.html.erb" do
     assigns[:websites] = [
       stub_model(Website,
         :href => "value for href",
-        :name => "value for name",
+        :name => "value for name"
       ),
       stub_model(Website,
         :href => "value for href",
-        :name => "value for name",
+        :name => "value for name"
       )
     ]
   end

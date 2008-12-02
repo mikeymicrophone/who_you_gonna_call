@@ -6,7 +6,7 @@ describe "/phone_uses/new.html.erb" do
   before(:each) do
     assigns[:phone_use] = stub_model(PhoneUse,
       :new_record? => true,
-      :target_type => "value for target_type",
+      :target_type => "value for target_type"
     )
   end
 
