@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
+  before_filter :load_user_into_ar
 
   private
     def current_user_session
@@ -45,9 +46,28 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
+    
+    def load_user_into_ar
+      ActiveRecord::Base.instance_variable_set('@current_user', current_user)
+    end
   
-  # See ActionController::Base for details 
-  # Uncomment this to filter the contents of submitted sensitive data parameters
-  # from your application log (in this case, all fields with names like "password"). 
-  # filter_parameter_logging :password
+end
+
+class ActiveRecord::Base
+  
+
+  belongs_to :creator, :class_name => 'User'
+  
+  def current_user_id
+    current_user.id if current_user
+  end
+  
+  def current_user
+    @current_user ||= ActiveRecord::Base.instance_variable_get('@current_user')
+  end
+  
+  def credit_creator
+    self.creator ||= current_user
+  end
+  before_create :credit_creator
 end
