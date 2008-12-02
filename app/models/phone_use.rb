@@ -2,6 +2,7 @@ class PhoneUse < ActiveRecord::Base
   belongs_to :phone
   belongs_to :target, :polymorphic => true
   has_many :calls, :as => :target
+  has_many :details, :as => :target
   
   def self.targets(format = :lowercase)
     case format

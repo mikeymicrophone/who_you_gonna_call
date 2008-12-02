@@ -2,6 +2,9 @@ class WebsiteUse < ActiveRecord::Base
   belongs_to :website
   belongs_to :target, :polymorphic => true
   
+  has_many :details, :as => :target
+  has_many :phone_uses, :as => :target
+  
   def self.targets(format = :lowercase)
     case format
     when :lowercase

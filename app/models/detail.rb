@@ -1,6 +1,9 @@
 class Detail < ActiveRecord::Base
   belongs_to :target, :polymorphic => true
   
+  has_many :authorizations, :as => :target
+  has_many :website_uses, :as => :target
+  
   def self.targets(format = :lowercase)
     case format
     when :lowercase

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081201223121) do
+ActiveRecord::Schema.define(:version => 20081202190247) do
 
   create_table "address_uses", :force => true do |t|
     t.integer  "address_id"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20081201223121) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
   create_table "phone_uses", :force => true do |t|
@@ -238,12 +239,13 @@ ActiveRecord::Schema.define(:version => 20081201223121) do
   end
 
   create_table "visits", :force => true do |t|
-    t.datetime "time"
+    t.datetime "earliest_time"
     t.string   "target_type"
     t.integer  "target_id"
     t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "latest_time"
   end
 
   create_table "website_uses", :force => true do |t|

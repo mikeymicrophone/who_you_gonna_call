@@ -3,6 +3,12 @@ class City < ActiveRecord::Base
   has_many :streets
   has_many :addresses, :through => :streets
   
+  has_many :details, :as => :target
+  has_many :email_uses, :as => :target
+  has_many :phone_uses, :as => :target
+  has_many :website_uses, :as => :target
+  has_many :visits, :as => :target
+  
   def country
     state.country
   end

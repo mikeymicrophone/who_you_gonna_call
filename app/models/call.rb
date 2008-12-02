@@ -1,6 +1,8 @@
 class Call < ActiveRecord::Base
   belongs_to :target, :polymorphic => true
   
+  has_many :details, :as => :target
+  
   def self.targets(format = :lowercase)
     case format
     when :lowercase
