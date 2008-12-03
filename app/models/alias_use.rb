@@ -1,5 +1,5 @@
 class AliasUse < ActiveRecord::Base
-  belongs_to :alia, :class_name => 'Alias'
+  belongs_to :alia, :class_name => 'Alias', :foreign_key => :alias_id
   belongs_to :target, :polymorphic => true
   
   def self.targets(format = :lowercase)
