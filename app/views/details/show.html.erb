@@ -1,5 +1,4 @@
 <p>
-  <b>Content:</b>
   <%=h @detail.content %>
 </p>
 
@@ -12,5 +11,5 @@
   <%= link_to_name @detail.target %>
 </p>
 
-<%= link_to 'Edit', edit_detail_path(@detail) %> |
+<%= edit_link @detail %>
 <%= back_link %>

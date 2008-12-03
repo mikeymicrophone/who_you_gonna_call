@@ -1,15 +1,6 @@
 <p>
-  <b>First name:</b>
   <%=h @person.first_name %>
-</p>
-
-<p>
-  <b>Middle name:</b>
   <%=h @person.middle_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
   <%=h @person.last_name %>
 </p>
 
@@ -17,6 +8,5 @@
   <%= link_to_name @person.user %>
 </p>
 
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= edit_link @person %>
 <%= back_link %>

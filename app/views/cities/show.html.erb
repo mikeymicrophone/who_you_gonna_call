@@ -1,5 +1,4 @@
 <p>
-  <b>Name:</b>
   <%=h @city.name %>
 </p>
 
@@ -8,5 +7,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= edit_link @city %>
 <%= back_link %>

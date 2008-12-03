@@ -1,5 +1,4 @@
 <p>
-  <b>Phone:</b>
   <%= link_to_name @phone_use.phone %>
 </p>
 
@@ -7,6 +6,5 @@
   <%= link_to_name @phone_use.target %>
 </p>
 
-
-<%= link_to 'Edit', edit_phone_use_path(@phone_use) %> |
+<%= edit_link @phone_use %>
 <%= back_link %>
