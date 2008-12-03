@@ -24,7 +24,7 @@ class AliasesController < ApplicationController
   # GET /aliases/new
   # GET /aliases/new.xml
   def new
-    @alias = Alias.new
+    @alias = Alias.new params[:alias]
 
     respond_to do |format|
       format.html # new.html.erb

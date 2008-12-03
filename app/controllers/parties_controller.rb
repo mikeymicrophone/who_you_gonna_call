@@ -24,7 +24,7 @@ class PartiesController < ApplicationController
   # GET /parties/new
   # GET /parties/new.xml
   def new
-    @party = Party.new
+    @party = Party.new params[:party]
 
     respond_to do |format|
       format.html # new.html.erb

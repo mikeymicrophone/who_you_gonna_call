@@ -24,7 +24,7 @@ class CountriesController < ApplicationController
   # GET /countries/new
   # GET /countries/new.xml
   def new
-    @country = Country.new
+    @country = Country.new params[:country]
 
     respond_to do |format|
       format.html # new.html.erb

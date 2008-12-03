@@ -24,7 +24,7 @@ class GuestsController < ApplicationController
   # GET /guests/new
   # GET /guests/new.xml
   def new
-    @guest = Guest.new
+    @guest = Guest.new params[:guest]
 
     respond_to do |format|
       format.html # new.html.erb

@@ -24,7 +24,7 @@ class EmailsController < ApplicationController
   # GET /emails/new
   # GET /emails/new.xml
   def new
-    @email = Email.new
+    @email = Email.new params[:email]
 
     respond_to do |format|
       format.html # new.html.erb

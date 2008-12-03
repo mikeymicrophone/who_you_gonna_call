@@ -24,7 +24,7 @@ class StatesController < ApplicationController
   # GET /states/new
   # GET /states/new.xml
   def new
-    @state = State.new
+    @state = State.new params[:state]
 
     respond_to do |format|
       format.html # new.html.erb

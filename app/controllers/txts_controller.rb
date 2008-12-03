@@ -24,7 +24,7 @@ class TxtsController < ApplicationController
   # GET /txts/new
   # GET /txts/new.xml
   def new
-    @txt = Txt.new
+    @txt = Txt.new params[:txt]
 
     respond_to do |format|
       format.html # new.html.erb

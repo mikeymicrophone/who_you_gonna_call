@@ -24,7 +24,7 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations/new
   # GET /authorizations/new.xml
   def new
-    @authorization = Authorization.new
+    @authorization = Authorization.new params[:authorization]
 
     respond_to do |format|
       format.html # new.html.erb

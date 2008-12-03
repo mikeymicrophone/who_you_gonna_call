@@ -24,7 +24,7 @@ class DetailsController < ApplicationController
   # GET /details/new
   # GET /details/new.xml
   def new
-    @detail = Detail.new
+    @detail = Detail.new params[:detail]
 
     respond_to do |format|
       format.html # new.html.erb

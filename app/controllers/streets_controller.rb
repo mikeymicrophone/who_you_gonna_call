@@ -24,7 +24,7 @@ class StreetsController < ApplicationController
   # GET /streets/new
   # GET /streets/new.xml
   def new
-    @street = Street.new
+    @street = Street.new params[:street]
 
     respond_to do |format|
       format.html # new.html.erb

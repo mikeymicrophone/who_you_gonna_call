@@ -24,7 +24,7 @@ class CitiesController < ApplicationController
   # GET /cities/new
   # GET /cities/new.xml
   def new
-    @city = City.new
+    @city = City.new params[:city]
 
     respond_to do |format|
       format.html # new.html.erb

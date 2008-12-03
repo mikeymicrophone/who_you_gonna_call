@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
   # GET /services/new
   # GET /services/new.xml
   def new
-    @service = Service.new
+    @service = Service.new params[:service]
 
     respond_to do |format|
       format.html # new.html.erb

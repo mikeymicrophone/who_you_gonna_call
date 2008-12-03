@@ -24,7 +24,7 @@ class VisitsController < ApplicationController
   # GET /visits/new
   # GET /visits/new.xml
   def new
-    @visit = Visit.new
+    @visit = Visit.new params[:visit]
 
     respond_to do |format|
       format.html # new.html.erb

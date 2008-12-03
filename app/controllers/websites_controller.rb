@@ -24,7 +24,7 @@ class WebsitesController < ApplicationController
   # GET /websites/new
   # GET /websites/new.xml
   def new
-    @website = Website.new
+    @website = Website.new params[:website]
 
     respond_to do |format|
       format.html # new.html.erb

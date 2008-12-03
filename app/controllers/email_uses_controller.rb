@@ -24,7 +24,7 @@ class EmailUsesController < ApplicationController
   # GET /email_uses/new
   # GET /email_uses/new.xml
   def new
-    @email_use = EmailUse.new
+    @email_use = EmailUse.new params[:email_use]
 
     respond_to do |format|
       format.html # new.html.erb

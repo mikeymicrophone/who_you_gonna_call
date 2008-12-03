@@ -24,7 +24,7 @@ class EstablishmentsController < ApplicationController
   # GET /establishments/new
   # GET /establishments/new.xml
   def new
-    @establishment = Establishment.new
+    @establishment = Establishment.new params[:establishment]
 
     respond_to do |format|
       format.html # new.html.erb

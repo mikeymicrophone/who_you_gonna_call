@@ -24,7 +24,7 @@ class WebsiteUsesController < ApplicationController
   # GET /website_uses/new
   # GET /website_uses/new.xml
   def new
-    @website_use = WebsiteUse.new
+    @website_use = WebsiteUse.new params[:website_use]
 
     respond_to do |format|
       format.html # new.html.erb

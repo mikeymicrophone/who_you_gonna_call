@@ -24,7 +24,7 @@ class AddressUsesController < ApplicationController
   # GET /address_uses/new
   # GET /address_uses/new.xml
   def new
-    @address_use = AddressUse.new
+    @address_use = AddressUse.new params[:address_use]
 
     respond_to do |format|
       format.html # new.html.erb

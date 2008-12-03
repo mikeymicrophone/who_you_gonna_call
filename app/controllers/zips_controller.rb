@@ -24,7 +24,7 @@ class ZipsController < ApplicationController
   # GET /zips/new
   # GET /zips/new.xml
   def new
-    @zip = Zip.new
+    @zip = Zip.new params[:zip]
 
     respond_to do |format|
       format.html # new.html.erb

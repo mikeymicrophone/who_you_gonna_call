@@ -8,8 +8,25 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   before_filter :load_user_into_ar
+  before_filter :prefix_params, :only => [:new, :create]
 
   private
+    def prefix_params
+      ids = params.select { |k, v| k =~ /_id/ }
+      ids.reject { |k, v| k =~ /#{controller_name}/ } # shouldn't hit anyway because this is only for the new and create actions
+      params[controller_name.singularize] ||= {}
+      model = controller_name.singularize.capitalize.constantize
+      ids.each do |k, v|
+        if model.new.respond_to?(k)
+          params[controller_name.singularize][k] = v
+        else
+          params[controller_name.singularize]['target_id'] = v
+          k =~ /(\w+)_id/
+          params[controller_name.singularize]['target_type'] = $1.capitalize
+        end
+      end
+    end
+  
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find

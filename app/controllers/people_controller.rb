@@ -24,7 +24,7 @@ class PeopleController < ApplicationController
   # GET /people/new
   # GET /people/new.xml
   def new
-    @person = Person.new
+    @person = Person.new params[:person]
 
     respond_to do |format|
       format.html # new.html.erb

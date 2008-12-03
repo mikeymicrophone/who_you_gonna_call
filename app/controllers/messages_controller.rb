@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   # GET /messages/new.xml
   def new
-    @message = Message.new
+    @message = Message.new params[:message]
 
     respond_to do |format|
       format.html # new.html.erb

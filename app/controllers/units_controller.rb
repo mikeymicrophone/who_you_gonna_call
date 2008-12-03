@@ -24,7 +24,7 @@ class UnitsController < ApplicationController
   # GET /units/new
   # GET /units/new.xml
   def new
-    @unit = Unit.new
+    @unit = Unit.new params[:unit]
 
     respond_to do |format|
       format.html # new.html.erb

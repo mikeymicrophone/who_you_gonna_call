@@ -24,7 +24,7 @@ class RendezvouzsController < ApplicationController
   # GET /rendezvouzs/new
   # GET /rendezvouzs/new.xml
   def new
-    @rendezvouz = Rendezvouz.new
+    @rendezvouz = Rendezvouz.new params[:rendezvouz]
 
     respond_to do |format|
       format.html # new.html.erb

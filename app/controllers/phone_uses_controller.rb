@@ -24,7 +24,7 @@ class PhoneUsesController < ApplicationController
   # GET /phone_uses/new
   # GET /phone_uses/new.xml
   def new
-    @phone_use = PhoneUse.new
+    @phone_use = PhoneUse.new params[:phone_use]
 
     respond_to do |format|
       format.html # new.html.erb
