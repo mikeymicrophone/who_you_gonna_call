@@ -1,61 +1,61 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :authorizations
+  map.resources :authorizations, :has_one => [:user, *Authorization.targets(:symbol)]
 
-  map.resources :services
+  map.resources :services, :has_many => [:aliases, :alias_uses, :messages, :address_uses, :addresses, :units, :details, :phone_uses, :phones, :website_uses, :people]
 
-  map.resources :alias_uses
+  map.resources :alias_uses, :has_one => [:alias, *AliasUse.targets(:symbol)]
 
-  map.resources :aliases
+  map.resources :aliases, :has_one => :service, :has_many => [:alias_uses, :details, :website_uses, :websites]
 
-  map.resources :establishments
+  map.resources :establishments, :has_many => [:rendezvouzs, :visits, :parties, :guests, :address_uses, :addresses, :calls, :details, :email_uses, :emails, :alias_uses, :aliases, :phone_uses, :phones, :website_uses, :websites]
 
-  map.resources :details
+  map.resources :details, :has_one => Detail.targets(:symbol), :has_many => [:authorizations, :users, :website_uses, :websites]
 
-  map.resources :parties
+  map.resources :parties, :has_one => Party.targets(:symbol), :has_many => [:guests, :address_uses, :addresses, :units, :details, :website_uses, :websites]
 
-  map.resources :guests
+  map.resources :guests, :has_one => [:person, *Guest.targets(:symbol)], :has_many => [:details]
 
-  map.resources :rendezvouzs
+  map.resources :rendezvouzs, :has_one => Rendezvouz.targets(:symbol), :has_many => [:address_uses, :addresses, :units, :details, :guests, :website_uses, :websites]
 
-  map.resources :visits
+  map.resources :visits, :has_one => Visit.targets(:symbol), :has_many => :guests
 
-  map.resources :messages
+  map.resources :messages, :has_one => [:service, :person], :has_many => [:details, :website_uses, :websites]
 
-  map.resources :txts
+  map.resources :txts, :has_one => :phone, :has_many => :details
 
-  map.resources :calls
+  map.resources :calls, :has_one => Call.targets(:symbol), :has_many => :details
 
-  map.resources :website_uses
+  map.resources :website_uses, :has_one => [:website, *WebsiteUse.targets(:symbol)], :has_many => [:details, :phone_uses]
 
-  map.resources :websites
+  map.resources :websites, :has_many => [:website_uses, :address_uses, :addresses, :details, :phone_uses, :phones]
 
-  map.resources :email_uses
+  map.resources :email_uses, :has_one => [:email, *EmailUse.targets(:symbol)]
 
-  map.resources :emails
+  map.resources :emails, :has_many => [:email_uses, :details, :website_uses, :websites]
 
-  map.resources :address_uses
+  map.resources :address_uses, :has_one => [:address, :unit, *AddressUse.targets(:symbol)], :has_many => [:parties, :phone_uses, :phones, :rendezvouzs, :website_uses, :websites, :visits, :guests]
 
-  map.resources :countries
+  map.resources :countries, :has_many => [:states, :cities, :zips, :details, :website_uses, :websites, :visits, :guests]
 
-  map.resources :states
+  map.resources :states, :has_one => :country, :has_many => [:cities, :zips, :streets, :details, :email_uses, :emails, :website_uses, :websites, :visits, :guests]
 
-  map.resources :cities
-
-  map.resources :zips
-
-  map.resources :streets
-
-  map.resources :addresses
-
-  map.resources :units
-
-  map.resources :phone_uses
-
-  map.resources :phones
-
-  map.resources :users
-
-  map.resources :people
+  map.resources :cities, :has_one => [:state, :country], :has_many => [:streets, :zips, :addresses, :details, :email_uses, :emails, :phone_uses, :phones, :website_uses, :websites, :visits, :guests, :units]
+  
+  map.resources :zips, :has_one => [:city, :state, :country], :has_many => :addresses
+  
+  map.resources :streets, :has_one => [:city], :has_many => [:addresses, :details, :parties, :rendezvouzs, :website_uses, :websites, :visits, :guests]
+  
+  map.resources :addresses, :has_many => [:details, :parties, :phone_uses, :rendezvouzs, :website_uses, :visits, :address_uses], :has_one => [:street, :zip]
+  
+  map.resources :units, :has_one => :address, :has_many => [:address_uses, :details, :parties, :phone_uses, :phones, :rendezvouzs, :website_uses, :websites, :visits, :guests]
+  
+  map.resources :phone_uses, :has_one => [:phone, *PhoneUse.targets(:symbol)], :has_many => [:calls, :details]
+  
+  map.resources :phones, :has_many => [:phone_uses, :calls, :address_uses, :addresses, :authorizations, :details, :website_uses, :websites]
+  
+  map.resources :users, :has_many => [:details, :people, :addresses, :address_uses, :aliases, :alias_uses, :authorizations, :calls, :cities, :countries, :details, :emails, :email_uses, :establishments, :guests, :messages, :parties, :phones, :phone_uses, :rendezvouzs, :services, :states, :streets, :txts, :units, :visits, :websites, :website_uses, :zips]
+  
+  map.resources :people, :has_one => :user, :has_many => [:phone_uses, :phones, :email_uses, :emails, :address_uses, :addresses, :website_uses, :websites, :alias_uses, :aliases, :authorizations, :calls, :details, :visits, :guests, :services]
 
   map.resource :user_session
   map.root :controller => "user_sessions", :action => "new"

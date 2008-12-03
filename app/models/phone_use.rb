@@ -7,13 +7,17 @@ class PhoneUse < ActiveRecord::Base
   def self.targets(format = :lowercase)
     case format
     when :lowercase
-      %[ person establishment website city service unit address address_use website_use ]
+      %w[ person establishment website city service unit address address_use website_use ]
+    when :symbol
+      targets.map &:to_sym
     when :capitalized
-      %[ Person Establishment Website City Service Unit Address AddressUse WebsiteUse ]
+      %w[ Person Establishment Website City Service Unit Address AddressUse WebsiteUse ]
     when :select
       targets.zip targets(:capitalized)
     end
   end
+  
+  scope_targets
   
   def name
     "#{target.name}: #{phone.name}"

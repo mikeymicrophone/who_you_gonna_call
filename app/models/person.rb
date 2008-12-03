@@ -14,9 +14,13 @@ class Person < ActiveRecord::Base
   has_many :authorizations, :as => :target
   has_many :calls, :as => :target
   has_many :details, :as => :target
-  has_many :email_uses, :as => :target
-  has_many :website_uses, :as => :target
   has_many :visits, :as => :target
+  has_many :visiting_guests, :through => :visits, :source => :guests
+  has_many :guests, :as => :target
+  
+  def services
+    aliases.map(&:service).uniq
+  end
   
   def name
     "#{first_name} #{last_name}"

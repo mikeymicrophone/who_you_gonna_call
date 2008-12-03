@@ -8,12 +8,16 @@ class Guest < ActiveRecord::Base
     case format
     when :lowercase
       %w[ rendezvouz visit party ]
+    when :symbol
+      targets.map &:to_sym
     when :capitalized
       %w[ Rendezvouz Visit Party ]
     when :select
       targets.zip targets(:capitalized)
     end
   end
+  
+  scope_targets
   
   def name
     "guest: #{person.name} at #{target.name}"

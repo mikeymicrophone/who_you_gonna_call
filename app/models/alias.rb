@@ -4,4 +4,5 @@ class Alias < ActiveRecord::Base
   
   has_many :details, :as => :target
   has_many :website_uses, :as => :target
+  has_many :websites, :through => :website_uses
 end

@@ -54,7 +54,21 @@ class ApplicationController < ActionController::Base
 end
 
 class ActiveRecord::Base
+  def self.scope_down controller, parameters, *associated_ids
+    set = nil
+    associated_ids.each do |c|
+      if set.nil? && parameters["#{c}_id"]
+        set = controller.instance_variable_set("@#{c}", c.capitalize.constantize.send(:find, parameters["#{c}_id"])).send(self.name.underscore.pluralize)
+      end
+    end
+    return set || all
+  end
   
+  def self.scope_targets
+    targets(:select).each do |s, c|
+      named_scope s, :conditions => {:target_type => c}
+    end
+  end  
 
   belongs_to :creator, :class_name => 'User'
   
