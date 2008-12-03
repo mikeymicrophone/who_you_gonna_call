@@ -1,43 +1,31 @@
 <p>
-  <b>Login:</b>
-  <%=h @user.login %>
+  <b><%=h @user.login %></b>  
+</p>
+
+<%= link_to 'add someone\'s name', new_person_path %>
+<%= link_to 'add a phone number', new_phone_path %>
+<%= link_to 'list a service', new_service_path %>
+<%= link_to 'mention an establishment', new_establishment_path %>
+<%= link_to 'locate a country', new_country_path %>
+<hr>
+<%= link_to 'plan a party', new_party_path %>
+<%= link_to 'schedule a call', new_call_path %>
+
+
+<p>
+  logged in <%=h @user.login_count %> times
 </p>
 
 <p>
-  <b>Email:</b>
-  <%=h @user.email %>
+  active <%= time_ago_in_words @user.last_request_at %> ago
 </p>
 
 <p>
-  <b>Login count:</b>
-  <%=h @user.login_count %>
+  logged in since <%= time_ago_in_words @user.current_login_at %> ago 
 </p>
 
 <p>
-  <b>Last request at:</b>
-  <%=h @user.last_request_at %>
+	also logged in <%= time_ago_in_words @user.last_login_at %> ago
 </p>
 
-<p>
-  <b>Last login at:</b>
-  <%=h @user.last_login_at %>
-</p>
-
-<p>
-  <b>Current login at:</b>
-  <%=h @user.current_login_at %>
-</p>
-
-<p>
-  <b>Last login ip:</b>
-  <%=h @user.last_login_ip %>
-</p>
-
-<p>
-  <b>Current login ip:</b>
-  <%=h @user.current_login_ip %>
-</p>
-
-
-<%= edit_link @user %>
 <%= back_link %>

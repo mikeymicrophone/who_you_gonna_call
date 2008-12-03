@@ -1,6 +1,11 @@
 <p>
   <%=h @country.name %>
 </p>
+<%= link_to 'new state', new_country_state_path(@country) %><br>
+
+<% @country.states.each do |s| %>
+  <%= link_to_name s %><br>
+<% end %>
 
 
 <%= edit_link @country %>

@@ -15,14 +15,14 @@ class ApplicationController < ActionController::Base
       ids = params.select { |k, v| k =~ /_id/ }
       ids.reject { |k, v| k =~ /#{controller_name}/ } # shouldn't hit anyway because this is only for the new and create actions
       params[controller_name.singularize] ||= {}
-      model = controller_name.singularize.capitalize.constantize
+      model = controller_name.singularize.camelize.constantize
       ids.each do |k, v|
         if model.new.respond_to?(k)
           params[controller_name.singularize][k] = v
         else
           params[controller_name.singularize]['target_id'] = v
           k =~ /(\w+)_id/
-          params[controller_name.singularize]['target_type'] = $1.capitalize
+          params[controller_name.singularize]['target_type'] = $1.camelize
         end
       end
     end

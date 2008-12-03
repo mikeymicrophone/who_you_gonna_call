@@ -1,6 +1,17 @@
 <p>
   <%=h @state.name %>
 </p>
+<%= link_to 'new city', new_state_city_path(@state) %><br>
+
+<% @state.cities.each do |c| %>
+  <%= link_to_name c %><br>
+<% end %>
+<hr>
+<%= link_to 'new zip', new_state_zip_path(@state) %><br>
+
+<% @state.zips.each do |z| %>
+  <%= link_to_name z %><br>
+<% end %>
 
 <p>
   <%= link_to_name @state.country %>

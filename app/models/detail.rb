@@ -22,6 +22,6 @@ class Detail < ActiveRecord::Base
   scope_targets
   
   def name
-    "detail: #{target.name}"
+    content[0..200]
   end
 end
