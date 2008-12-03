@@ -2,7 +2,7 @@ class AliasesController < ApplicationController
   # GET /aliases
   # GET /aliases.xml
   def index
-    @aliases = Alias.find(:all)
+    @aliases = Alias.scope_down(self, params, 'alias_use', 'service', 'detail', 'website_use', 'website')
 
     respond_to do |format|
       format.html # index.html.erb

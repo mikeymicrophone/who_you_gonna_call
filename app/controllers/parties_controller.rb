@@ -2,7 +2,7 @@ class PartiesController < ApplicationController
   # GET /parties
   # GET /parties.xml
   def index
-    @parties = Party.find(:all)
+    @parties = Party.scope_down(self, params, 'guest', 'detail', 'website_use', 'website', *Party.targets)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.xml
   def index
-    @guests = Guest.find(:all)
+    @guests = Guest.scope_down(self, params, 'person', 'detail', *Guest.targets)
 
     respond_to do |format|
       format.html # index.html.erb

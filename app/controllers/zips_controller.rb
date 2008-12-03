@@ -2,7 +2,7 @@ class ZipsController < ApplicationController
   # GET /zips
   # GET /zips.xml
   def index
-    @zips = Zip.find(:all)
+    @zips = Zip.scope_down(self, params, 'address', 'city', 'state', 'country')
 
     respond_to do |format|
       format.html # index.html.erb

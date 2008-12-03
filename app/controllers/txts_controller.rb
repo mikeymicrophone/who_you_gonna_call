@@ -2,7 +2,7 @@ class TxtsController < ApplicationController
   # GET /txts
   # GET /txts.xml
   def index
-    @txts = Txt.find(:all)
+    @txts = Txt.scope_down(self, params, 'phone', 'detail')
 
     respond_to do |format|
       format.html # index.html.erb

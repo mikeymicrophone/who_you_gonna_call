@@ -2,7 +2,7 @@ class UnitsController < ApplicationController
   # GET /units
   # GET /units.xml
   def index
-    @units = Unit.find(:all)
+    @units = Unit.scope_down(self, params, 'address', 'address_use', 'detail', 'party', 'phone_use', 'phone', 'rendezvouz', 'website_use', 'website', 'visit', 'guest')
 
     respond_to do |format|
       format.html # index.html.erb

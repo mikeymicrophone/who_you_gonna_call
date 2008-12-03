@@ -2,7 +2,7 @@ class PhoneUsesController < ApplicationController
   # GET /phone_uses
   # GET /phone_uses.xml
   def index
-    @phone_uses = PhoneUse.find(:all)
+    @phone_uses = PhoneUse.scope_down(self, params, 'phone', 'call', 'detail', *PhoneUse.targets)
 
     respond_to do |format|
       format.html # index.html.erb

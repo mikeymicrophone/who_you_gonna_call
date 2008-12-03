@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.xml
   def index
-    @people = Person.find(:all)
+    @people = Person.scope_down(self, params, 'user', 'phone_use', 'phone', 'email_use', 'email', 'address_use', 'address', 'website_use', 'website', 'alias_use', 'alias', 'authorization', 'call', 'detail', 'visit', 'guest', 'service')
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class DetailsController < ApplicationController
   # GET /details
   # GET /details.xml
   def index
-    @details = Detail.find(:all)
+    @details = Detail.scope_down(self, params, 'authorization', 'user', 'website_use', 'website', *Detail.targets)
 
     respond_to do |format|
       format.html # index.html.erb

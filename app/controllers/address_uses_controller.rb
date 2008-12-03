@@ -2,7 +2,7 @@ class AddressUsesController < ApplicationController
   # GET /address_uses
   # GET /address_uses.xml
   def index
-    @address_uses = AddressUse.find(:all)
+    @address_uses = AddressUse.scope_down(self, params, 'address', 'unit', 'phone_use', 'website_use', 'visit', 'guest', *AddressUse.targets)
 
     respond_to do |format|
       format.html # index.html.erb

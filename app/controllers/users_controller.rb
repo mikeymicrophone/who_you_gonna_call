@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.all
+    @users = User.scope_down(self, params, 'detail', 'person', 'address', 'address_use', 'alias', 'alias_use', 'authorization', 'call', 'city', 'country', 'detail', 'email', 'email_use', 'establishment', 'guest', 'message', 'party', 'phone', 'phone_use', 'rendezvouz', 'service', 'state', 'street', 'txt', 'unit', 'visit', 'website', 'website_use', 'zip')
   end
 
   def create

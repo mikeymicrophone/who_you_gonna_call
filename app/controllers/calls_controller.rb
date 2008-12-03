@@ -2,7 +2,7 @@ class CallsController < ApplicationController
   # GET /calls
   # GET /calls.xml
   def index
-    @calls = Call.find(:all)
+    @calls = Call.scope_down(self, params, 'detail', *Call.targets)
 
     respond_to do |format|
       format.html # index.html.erb

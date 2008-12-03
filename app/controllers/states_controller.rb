@@ -2,7 +2,7 @@ class StatesController < ApplicationController
   # GET /states
   # GET /states.xml
   def index
-    @states = State.find(:all)
+    @states = State.scope_down(self, params, 'city', 'zip', 'country', 'street', 'detail', 'email_use', 'email', 'website_use', 'website', 'visit', 'guest')
 
     respond_to do |format|
       format.html # index.html.erb

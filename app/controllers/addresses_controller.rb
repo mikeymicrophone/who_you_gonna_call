@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.xml
   def index
-    @addresses = Address.find(:all)
+    @addresses = Address.scope_down(self, params, 'address_use', 'street', 'zip', 'detail', 'party', 'phone_use', 'phone', 'rendezvouz', 'website_use', 'website', 'visit', 'guest')
 
     respond_to do |format|
       format.html # index.html.erb

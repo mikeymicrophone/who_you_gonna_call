@@ -2,7 +2,7 @@ class VisitsController < ApplicationController
   # GET /visits
   # GET /visits.xml
   def index
-    @visits = Visit.find(:all)
+    @visits = Visit.scope_down(self, params, 'guest', *Visit.targets)
 
     respond_to do |format|
       format.html # index.html.erb

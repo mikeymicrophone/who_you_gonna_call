@@ -14,7 +14,7 @@ class Establishment < ActiveRecord::Base
   has_many :email_uses, :as => :target
   has_many :emails, :through => :email_uses
   has_many :alias_uses, :as => :target
-  has_many :alises, :through => :alias_uses
+  has_many :aliases, :through => :alias_uses
   has_many :phone_uses, :as => :target
   has_many :phones, :through => :phone_uses
   has_many :website_uses, :as => :target

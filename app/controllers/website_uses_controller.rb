@@ -2,7 +2,7 @@ class WebsiteUsesController < ApplicationController
   # GET /website_uses
   # GET /website_uses.xml
   def index
-    @website_uses = WebsiteUse.find(:all)
+    @website_uses = WebsiteUse.scope_down(self, params, 'website', 'phone_use', *WebsiteUse.targets)
 
     respond_to do |format|
       format.html # index.html.erb

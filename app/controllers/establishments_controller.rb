@@ -2,7 +2,7 @@ class EstablishmentsController < ApplicationController
   # GET /establishments
   # GET /establishments.xml
   def index
-    @establishments = Establishment.find(:all)
+    @establishments = Establishment.scope_down(self, params, 'rendezvouz', 'visit', 'party', 'guest', 'address_use', 'address', 'call', 'detail', 'email_use', 'email', 'alias_use', 'alias', 'phone_use', 'phone', 'website_use', 'website')
 
     respond_to do |format|
       format.html # index.html.erb

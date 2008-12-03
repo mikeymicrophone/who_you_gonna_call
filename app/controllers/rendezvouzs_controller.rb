@@ -2,7 +2,7 @@ class RendezvouzsController < ApplicationController
   # GET /rendezvouzs
   # GET /rendezvouzs.xml
   def index
-    @rendezvouzs = Rendezvouz.find(:all)
+    @rendezvouzs = Rendezvouz.scope_down(self, params, 'detail', 'guest', 'website_use', 'website', *Rendezvouz.targets)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations
   # GET /authorizations.xml
   def index
-    @authorizations = Authorization.find(:all)
+    @authorizations = Authorization.scope_down(self, params, 'user', *Authorization.targets)
 
     respond_to do |format|
       format.html # index.html.erb

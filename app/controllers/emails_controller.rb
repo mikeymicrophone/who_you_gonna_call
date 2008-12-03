@@ -2,7 +2,7 @@ class EmailsController < ApplicationController
   # GET /emails
   # GET /emails.xml
   def index
-    @emails = Email.find(:all)
+    @emails = Email.scope_down(self, params, 'email_use', 'detail', 'website_use', 'website')
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.xml
   def index
-    @services = Service.find(:all)
+    @services = Service.scope_down(self, params, 'alias', 'alias_use', 'message', 'address_use', 'address', 'unit', 'detail', 'phone_use', 'phone', 'website_use', 'website')
 
     respond_to do |format|
       format.html # index.html.erb

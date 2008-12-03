@@ -2,7 +2,7 @@ class CitiesController < ApplicationController
   # GET /cities
   # GET /cities.xml
   def index
-    @cities = City.find(:all)
+    @cities = City.scope_down(self, params, 'state', 'country', 'street', 'zip', 'address', 'detail', 'email_use', 'email', 'phone_use', 'phone', 'website_use', 'website', 'visit', 'guest')
 
     respond_to do |format|
       format.html # index.html.erb

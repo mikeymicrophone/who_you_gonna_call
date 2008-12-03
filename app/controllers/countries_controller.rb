@@ -2,7 +2,7 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.xml
   def index
-    @countries = Country.find(:all)
+    @countries = Country.scope_down(self, params, 'state', 'city', 'zip', 'detail', 'website_use', 'website', 'visit', 'guest')
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class EmailUsesController < ApplicationController
   # GET /email_uses
   # GET /email_uses.xml
   def index
-    @email_uses = EmailUse.find(:all)
+    @email_uses = EmailUse.scope_down(self, params, 'email', *EmailUse.targets)
 
     respond_to do |format|
       format.html # index.html.erb

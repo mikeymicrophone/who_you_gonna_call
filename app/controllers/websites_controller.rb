@@ -2,7 +2,7 @@ class WebsitesController < ApplicationController
   # GET /websites
   # GET /websites.xml
   def index
-    @websites = Website.find(:all)
+    @websites = Website.scope_down(self, params, 'website_use', 'address_use', 'address', 'detail', 'phone_use', 'phone')
 
     respond_to do |format|
       format.html # index.html.erb

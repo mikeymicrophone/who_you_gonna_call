@@ -2,7 +2,7 @@ class StreetsController < ApplicationController
   # GET /streets
   # GET /streets.xml
   def index
-    @streets = Street.find(:all)
+    @streets = Street.scope_down(self, params, 'city', 'address', 'detail', 'party', 'rendezvouz', 'website_use', 'website', 'visit', 'guest')
 
     respond_to do |format|
       format.html # index.html.erb

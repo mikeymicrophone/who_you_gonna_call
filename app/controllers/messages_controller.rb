@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
   def index
-    @messages = Message.find(:all)
+    @messages = Message.scope_down(self, params, 'service', 'person', 'detail', 'website_use', 'website')
 
     respond_to do |format|
       format.html # index.html.erb
