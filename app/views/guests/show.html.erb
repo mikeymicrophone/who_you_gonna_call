@@ -1,20 +1,9 @@
 <p>
-  <b>Person:</b>
-  <%=h @guest.person_id %>
+  <%= link_to_name @guest.person %> is invited to 
+  <%= link_to_name @guest.target %>
 </p>
 
 <p>
-  <b>Target type:</b>
-  <%=h @guest.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @guest.target_id %>
-</p>
-
-<p>
-  <b>Status:</b>
   <%=h @guest.status %>
 </p>
 

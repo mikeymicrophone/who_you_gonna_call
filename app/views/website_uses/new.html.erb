@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :website_id %><br />
-    <%= f.text_field :website_id %>
+    <%= f.select :website_id, Website.map_name_and_id %>
   </p>
   <% unless @website_use.target %>
 	  <p>

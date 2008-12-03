@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :phone_id %><br />
-    <%= f.text_field :phone_id %>
+    <%= f.select :phone_id, Phone.map_name_and_id %>
   </p>
   <p>
     <%= f.label :status %><br />

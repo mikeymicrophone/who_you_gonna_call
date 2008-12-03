@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :street_id %><br />
-    <%= f.text_field :street_id %>
+    <%= f.select :street_id, Street.map_name_and_id %>
   </p>
   <p>
     <%= f.label :line2 %><br />
@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :zip_id %><br />
-    <%= f.text_field :zip_id %>
+    <%= f.select :zip_id, Zip.map_name_and_id %>
   </p>
   
   <p>

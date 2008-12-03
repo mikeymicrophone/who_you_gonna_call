@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.select :user_id, User.map_name_and_id %>
   </p>
   <% unless @authorization.target %>
 	  <p>

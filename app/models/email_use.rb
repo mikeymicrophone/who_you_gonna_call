@@ -1,4 +1,5 @@
 class EmailUse < ActiveRecord::Base
+  belongs_to :email
   belongs_to :target, :polymorphic => true
   
   def self.targets(format = :lowercase)

@@ -1,21 +1,13 @@
 <p>
-  <b>Name:</b>
   <%=h @zip.name %>
 </p>
 
 <p>
-  <b>City:</b>
-  <%=h @zip.city_id %>
+  <%= link_to_name @zip.city %>
 </p>
 
 <p>
-  <b>State:</b>
-  <%=h @zip.state_id %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @zip.creator_id %>
+  <%= link_to_name @zip.state %>
 </p>
 
 

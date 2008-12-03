@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :email_id %><br />
-    <%= f.text_field :email_id %>
+    <%= f.select :email_id, Email.map_name_and_id %>
   </p>
   <% unless @email_use.target %>
 	  <p>

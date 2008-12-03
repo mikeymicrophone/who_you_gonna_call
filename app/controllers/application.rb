@@ -71,4 +71,13 @@ class ActiveRecord::Base
   end
   before_create :credit_creator
   
+  def self.map_name_and_id
+    all.map { |a| txt = (a.name.blank? ? a.other_name : a.name); [txt, a.id] }
+  end
+end
+
+class Array
+  def map_name_and_id
+    map { |a| txt = (a.name.blank? ? a.other_name : a.name); [txt, a.id] }
+  end
 end

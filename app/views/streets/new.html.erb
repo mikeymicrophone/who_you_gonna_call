@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
+    <%= f.select :city_id, City.map_name_and_id %>
   </p>
   
   <p>

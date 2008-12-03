@@ -1,3 +1,6 @@
 [submodule "vendor/plugins/authlogic"]
 	path = vendor/plugins/authlogic
 	url = git://github.com/binarylogic/authlogic.git
+[submodule "vendor/plugins/rails_footnotes"]
+	path = vendor/plugins/rails_footnotes
+	url = git://github.com/drnic/rails-footnotes.git

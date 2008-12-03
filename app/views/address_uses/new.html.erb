@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
+    <%= f.select :address_id, Address.map_name_and_id %>
   </p>
   <p>
     <%= f.label :unit_id %><br />
-    <%= f.text_field :unit_id %>
+    <%= f.select :unit_id, Unit.map_name_and_id %>
   </p>
   <% unless @address_use.target %>
 	  <p>

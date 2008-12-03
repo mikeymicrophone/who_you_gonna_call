@@ -1,15 +1,12 @@
 <p>
-  <%=h @unit.number %>
+  <%=h @unit.number %><br>
+  <%=h @unit.line2 %>
 </p>
 
 <p>
   <%= link_to_name @unit.address %>
 </p>
 
-<p>
-  <b>Line2:</b>
-  <%=h @unit.line2 %>
-</p>
 
 <%= link_to 'Edit', edit_unit_path(@unit) %> |
 <%= back_link %>

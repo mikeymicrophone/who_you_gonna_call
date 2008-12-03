@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :person_id %><br />
-    <%= f.text_field :person_id %>
+    <%= f.select :person_id, Person.map_name_and_id %>
   </p>
   <% unless @guest.target %>
 	  <p>

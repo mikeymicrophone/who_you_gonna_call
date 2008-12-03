@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :state_id %><br />
-    <%= f.text_field :state_id %>
+    <%= f.select :state_id, State.map_name_and_id %>
   </p>
   
   <p>
