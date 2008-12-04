@@ -6,5 +6,9 @@
   <%= link_to_name @alias.service %>
 </p>
 
+<%= link_to_each @alias, 'details', 'websites', 'people_from_alias_uses', 'establishments_from_alias_uses' %>
+
+<%= new_links @alias, 'detail', 'website_use' %>
+
 <%= edit_link @alias %>
 <%= back_link %>

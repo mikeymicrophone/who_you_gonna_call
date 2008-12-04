@@ -18,17 +18,8 @@ class AddressUse < ActiveRecord::Base
     visiting_guests + rendezvouz_guests + party_guests
   end
     
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ establishment party person phone rendezvouz service website ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Establishment Party Person Phone Rendezvouz Service Website ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ establishment party person phone rendezvouz service website ]
   end
   
   scope_targets

@@ -11,5 +11,9 @@
   <%= link_to_name @address.zip %>
 </p>
 
+<%= link_to_each @address, 'details', 'parties', 'phones', 'rendezvouzs', 'websites', 'visits', 'guests' %>
+
+<%= new_links @address, 'detail', 'party', 'phone_use', 'rendezvouz', 'website_use', 'visit' %>
+
 <%= edit_link @address %>
 <%= back_link %>

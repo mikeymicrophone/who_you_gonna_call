@@ -7,6 +7,8 @@ class Website < ActiveRecord::Base
   has_many :phone_uses, :as => :target
   has_many :phones, :through => :phone_uses
   
+  group_targets_of 'website_uses'
+  
   def other_name
     href
   end

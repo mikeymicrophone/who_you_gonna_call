@@ -10,6 +10,8 @@ class Phone < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   
+  group_targets_of 'phone_uses'
+  
   def calls
     phone_use_calls + phone_calls
   end

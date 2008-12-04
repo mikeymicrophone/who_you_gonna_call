@@ -1,22 +1,9 @@
 <p>
-  <b>Number:</b>
-  <%=h @phone.number %>
-</p>
-
-<p>
-  <b>Area code:</b>
-  <%=h @phone.area_code %>
-</p>
-
-<p>
-  <b>Country code:</b>
-  <%=h @phone.country_code %>
-</p>
-
-<p>
-  <b>Name:</b>
+  <h2><%=h @phone.country_code %>  <%=h @phone.area_code %>  <%=h @phone.number %></h2>
   <%=h @phone.name %>
 </p>
+
+<%= link_to_each @phone, 'people_from_phone_uses' %>
 
 <%= edit_link @phone %>
 <%= back_link %>

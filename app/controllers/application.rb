@@ -75,7 +75,9 @@ class ActiveRecord::Base
     set = nil
     associated_ids.each do |c|
       if set.nil? && parameters["#{c}_id"]
-        set = controller.instance_variable_set("@#{c}", c.capitalize.constantize.send(:find, parameters["#{c}_id"])).send(self.name.underscore.pluralize)
+        scope_object = c.capitalize.constantize.send(:find, parameters["#{c}_id"])
+        controller.instance_variable_set("@#{c}", scope_object)
+        set = scope_object.send(self.name.underscore.pluralize)
       end
     end
     return set || all
@@ -85,7 +87,32 @@ class ActiveRecord::Base
     targets(:select).each do |s, c|
       named_scope s, :conditions => {:target_type => c}
     end
-  end  
+  end
+  
+  def self.group_targets_of join
+    join.singularize.camelize.constantize.send('targets', :sing_plural).each do |singular, plural|
+      define_method("#{plural}_from_#{join}") do
+        send(join).send(singular).map(&:target)
+      end
+    end
+  end
+  
+  def self.targets(format = :lowercase)
+    case format
+    when :lowercase
+      target_list
+    when :capital
+      targets.map &:camelize
+    when :symbol
+      targets.map &:to_sym
+    when :plural
+      targets.map &:pluralize
+    when :sing_plural
+      targets.zip targets(:plural)
+    when :select
+      targets.zip targets(:capital)
+    end
+  end
 
   belongs_to :creator, :class_name => 'User'
   

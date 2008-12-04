@@ -4,17 +4,8 @@ class PhoneUse < ActiveRecord::Base
   has_many :calls, :as => :target
   has_many :details, :as => :target
   
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ person establishment website city service unit address address_use website_use ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Person Establishment Website City Service Unit Address AddressUse WebsiteUse ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ person establishment website city service unit address address_use website_use ]
   end
   
   scope_targets

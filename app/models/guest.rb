@@ -4,17 +4,8 @@ class Guest < ActiveRecord::Base
   
   has_many :details, :as => :target
   
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ rendezvouz visit party ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Rendezvouz Visit Party ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ rendezvouz visit party ]
   end
   
   scope_targets

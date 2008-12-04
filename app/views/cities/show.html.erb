@@ -2,55 +2,13 @@
   <%=h @city.name %>
 </p>
 
-<%= link_to 'new street', new_city_street_path(@city) %><br>
+<%= link_to_each @city, 'streets', 'zips', 'addresses', 'details', 'emails', 'phones', 'websites', 'visits', 'guests' %>
 
-<% @city.streets.each do |s| %>
-  <%= link_to_name s %><br>
-<% end %>
-<hr>
-<%= link_to 'new zip', new_city_zip_path(@city) %><br>
-
-<% @city.zips.each do |z| %>
-  <%= link_to_name z %><br>
-<% end %>
-<hr>
-<% @city.addresses.each do |a| %>
-  <%= link_to_name a %><br>
-<% end %>
-<hr>
-<%= link_to 'new detail', new_city_detail_path(@city) %><br>
-<% @city.details.each do |d| %>
-  <%= link_to_name d %><br>
-<% end %>
-<hr>
-<%= link_to 'new inbox', new_city_email_use_path(@city) %><br>
-<% @city.emails.each do |e| %>
-  <%= link_to_name e %><br>
-<% end %>
-<hr>
-<%= link_to 'new phone', new_city_phone_use_path(@city) %><br>
-<% @city.phones.each do |p| %>
-  <%= link_to_name p %><br>
-<% end %>
-<hr>
-<%= link_to 'new site', new_city_website_use_path(@city) %><br>
-<% @city.websites.each do |w| %>
-  <%= link_to_name w %><br>
-<% end %>
-<hr>
-<%= link_to 'plan a visit', new_city_visit_path(@city) %><br>
-<% @city.visits.each do |v| %>
-  <%= link_to_name v %><br>
-<% end %>
-<hr>
-<% @city.guests.each do |g| %>
-  <%= link_to_name g %><br>
-<% end %>
+<%= new_links @city, 'street', 'zip', 'detail', 'email_use', 'phone_use', 'website_use', 'visit' %>
 
 <p>
   <%= link_to_name @city.state %>
 </p>
-
 
 <%= edit_link @city %>
 <%= back_link %>

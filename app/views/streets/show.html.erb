@@ -2,6 +2,8 @@
   <%=h @street.name %>
 </p>
 
+<%= link_to_each @street, 'details', 'parties', 'rendezvouzs', 'websites', 'visits', 'guests' %>
+
 <p>
   <%= link_to_name @street.city %>
 </p>

@@ -9,17 +9,8 @@ class Rendezvouz < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ address address_use establishment unit street ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Address AddressUse Establishment Unit Street ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ address address_use establishment unit street ]
   end
   
   scope_targets

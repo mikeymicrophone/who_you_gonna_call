@@ -6,17 +6,8 @@ class Detail < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ address alias call city country email establishment guest message party person phone phone_use rendezvouz service state street txt unit user website website_use ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Address Alias Call City Country Email Establishment Guest Message Party Person Phone Phone_use Rendezvouz Service State Street Txt Unit User Website WebsiteUse ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ address alias call city country email establishment guest message party person phone phone_use rendezvouz service state street txt unit user website website_use ]
   end
   
   scope_targets

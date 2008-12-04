@@ -9,17 +9,8 @@ class Party < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ address address_use establishment street unit ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Address AddressUse Establishment Street Unit ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ address address_use establishment street unit ]
   end
   
   scope_targets

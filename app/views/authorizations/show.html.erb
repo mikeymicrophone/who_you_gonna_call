@@ -3,5 +3,7 @@
   <%= link_to_name @authorization.target %>
 </p>
 
+<%= link_to_each @authorization, 'people', 'phones', 'details' %>
+
 <%= edit_link @authorization %>
 <%= back_link %>

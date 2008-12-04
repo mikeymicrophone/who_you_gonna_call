@@ -14,6 +14,8 @@ class Unit < ActiveRecord::Base
   has_many :rendezvouz_guests, :through => :rendezvouzs, :source => :guests
   has_many :party_guests, :through => :parties, :source => :guests
   
+  group_targets_of 'address_uses'
+  
   def guests
     visiting_guests + rendezvouz_guests + party_guests
   end

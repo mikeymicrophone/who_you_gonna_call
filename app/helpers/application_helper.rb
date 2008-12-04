@@ -14,4 +14,12 @@ module ApplicationHelper
     text = obj.name.blank? ? obj.other_name : obj.name
     link_to text, obj
   end
+  
+  def link_to_each obj, *collections
+    collections.map { |c| content_tag(:ul, obj.send(c).map { |r| content_tag(:li, link_to_name(r)) }.join) }.join
+  end
+  
+  def new_links obj, *children
+    children.map { |c| content_tag(:span, link_to("new #{c}", send("new_#{obj.class.name.underscore}_#{c}_path", obj))) }.join
+  end
 end

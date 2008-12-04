@@ -3,17 +3,8 @@ class Call < ActiveRecord::Base
   
   has_many :details, :as => :target
   
-  def self.targets(format = :lowercase)
-    case format
-    when :lowercase
-      %w[ person phone phone_use establishment ]
-    when :symbol
-      targets.map &:to_sym
-    when :capitalized
-      %w[ Person Phone PhoneUse Establishment ]
-    when :select
-      targets.zip targets(:capitalized)
-    end
+  def self.target_list
+    %w[ person phone phone_use establishment ]
   end
   
   scope_targets
