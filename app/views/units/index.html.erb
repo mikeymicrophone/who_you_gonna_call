@@ -1,24 +1,16 @@
 <h1>units</h1>
 
 <table>
-  <tr>
-    <th>Number</th>
-    <th>Address</th>
-    <th>Line2</th>
-
-  </tr>
 
 <% for unit in @units %>
   <tr>
-    <td><%=h unit.number %></td>
+    <td><%= link_to_name unit %></td>
     <td><%= link_to_name unit.address %></td>
     <td><%=h unit.line2 %></td>
-
-    <td><%= link_to 'show', unit %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New unit', new_unit_path %>
+<%= link_to 'new unit', new_unit_path %>

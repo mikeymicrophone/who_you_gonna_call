@@ -4,14 +4,14 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.text_field :number %><%= f.label :number, 'apartment/unit number' %>
+    <%= f.text_field :number, :size => 5 %><%= f.label :number, 'apartment/unit number' %>
   </p>
   <p>
     <%= f.select :address_id, Address.map_name_and_id %><%= f.label :address_id, 'your address' %>
     <%= link_to 'add this address', new_address_path %>
   </p>
   <p>
-    <%= f.text_field :line2 %><%= f.label :line2, 'line 2' %>
+    <%= f.text_field :line2, :size => 12 %><%= f.label :line2, 'line 2' %>
   </p>
   
   <p>

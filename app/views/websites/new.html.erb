@@ -1,19 +1,19 @@
-<h1>New website</h1>
+<h1>new website</h1>
 
 <% form_for(@website) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :href %><br />
+    <%= f.label :href, 'href/address' %><br />
     <%= f.text_field :href %>
   </p>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, 'name' %><br />
     <%= f.text_field :name %>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

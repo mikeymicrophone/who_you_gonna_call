@@ -4,16 +4,13 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :size => 20 %><%= f.label :first_name, 'first name' %>
   </p>
   <p>
-    <%= f.label :middle_name %><br />
-    <%= f.text_field :middle_name %>
+    <%= f.text_field :middle_name, :size => 20 %><%= f.label :middle_name, 'middle' %>
   </p>
   <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :size => 20 %><%= f.label :last_name, 'last' %>
   </p>
   <p>
     <%= f.submit "save" %>

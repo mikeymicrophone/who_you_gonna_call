@@ -1,19 +1,18 @@
-<h1>New state</h1>
+<h1>new state</h1>
 
 <% form_for(@state) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :country_id %><br />
-    <%= f.select :country_id, Country.map_name_and_id %>
+    <%= f.select :country_id, Country.map_name_and_id %><%= f.label :country_id, 'country' %>
+		<%= link_to 'add country', new_country_path %>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 
