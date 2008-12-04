@@ -8,7 +8,7 @@
   <%= link_to_name @person.user %>
 </p>
 
-<%= link_to_each @person, 'phones', 'emails', 'addresses', 'websites', 'calls', 'authorizations', 'details', 'visits', 'guests', 'parties_from_guests', 'rendezvouzs_from_guests', 'visits_from_guests' %>
+<%= link_to_each @person, 'phones', 'emails', 'addresses', 'units', 'websites', 'calls', 'authorizations', 'details', 'visits', 'guests', 'parties_from_guests', 'rendezvouzs_from_guests', 'visits_from_guests' %>
 
 <%= new_links @person, 'authorization', 'phone_use', 'email_use', 'address_use', 'website_use', 'alias_use', 'call', 'detail', 'visit', 'guest' %>
 

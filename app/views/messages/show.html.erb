@@ -19,6 +19,10 @@
   <%=h @message.status %>
 </p>
 
+<%= link_to_each @message, 'details', 'websites' %>
+
+<%= new_links @message, 'detail', 'website_use' %>
+
 
 <%= edit_link @message %>
 <%= back_link %>

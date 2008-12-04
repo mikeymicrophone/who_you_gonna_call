@@ -2,5 +2,8 @@
   <%=h @service.name %>
 </p>
 
+<%= link_to_each @service, 'people', 'aliases', 'messages', 'addresses', 'units', 'details', 'phones', 'websites' %>
+<%= new_links @service, 'alias', 'message', 'address_use', 'detail', 'phone_use', 'website_use' %>
+
 <%= edit_link @service %>
 <%= back_link %>

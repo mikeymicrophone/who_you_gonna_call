@@ -13,6 +13,6 @@ class Service < ActiveRecord::Base
   has_many :websites, :through => :website_uses
   
   def people
-    alias_uses.map &:person
+    alias_uses.person.map &:target
   end
 end

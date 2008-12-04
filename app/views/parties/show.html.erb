@@ -1,17 +1,15 @@
+<% past = @party.time < Time.now %>
 <p>
-  <b>Time:</b>
-  <%=h @party.time.strftime("%I:%M %p %A %m/%d") %>
+ there <%= past ? 'was' : 'will be' %> a party at <%= link_to_name @party.target %> <%= time_ago_in_words(@party.time) %><%= past ? ' ago' : ' from now'%>
+</p>
+<p>
+  <%= @party.time.strftime("%A %m/%d %I:%M") %>
+-
+  <%= @party.until.strftime("%I:%M %p") %>
 </p>
 
-<p>
-  <b>Until:</b>
-  <%=h @party.until.strftime("%I:%M %p") %>
-</p>
-
-<p>
-  <b>location:</b>
-  <%= link_to_name @party.target %>
-</p>
+<%= link_to_each @party, 'guests', 'addresses', 'units', 'details', 'websites' %>
+<%= new_links @party, 'guest', 'detail', 'website', 'address_use' %>
 
 <%= edit_link @party %>
 <%= back_link %>
