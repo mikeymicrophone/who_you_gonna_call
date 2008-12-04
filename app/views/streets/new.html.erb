@@ -1,19 +1,18 @@
-<h1>New street</h1>
+<h1>new street</h1>
 
 <% form_for(@street) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><%= f.label :name, 'street name' %>
   </p>
   <p>
-    <%= f.label :city_id %><br />
-    <%= f.select :city_id, City.map_name_and_id %>
+    <%= f.select :city_id, City.map_name_and_id %><%= f.label :city_id, 'city' %>
+		<%= link_to 'list another city', new_city_path %>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

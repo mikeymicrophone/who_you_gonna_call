@@ -16,10 +16,16 @@ module ApplicationHelper
   end
   
   def link_to_each obj, *collections
-    collections.map { |c| content_tag(:ul, obj.send(c).map { |r| content_tag(:li, link_to_name(r)) }.join) }.join
+    collections.map do |collection|
+      content_tag(:ul, obj.send(collection).map do |record|
+        content_tag(:li, link_to_name(record))
+      end.join)
+    end.join
   end
   
   def new_links obj, *children
-    children.map { |c| content_tag(:span, link_to("new #{c}", send("new_#{obj.class.name.underscore}_#{c}_path", obj))) }.join
+    children.map do |child|
+      content_tag(:span, link_to("new #{child}", send("new_#{obj.class.name.underscore}_#{child}_path", obj)))
+    end.join
   end
 end

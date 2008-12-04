@@ -1,15 +1,17 @@
-<h1>New address_use</h1>
+<h1><%= link_to_name(@address_use.target) + ' uses this' if @address_use.target %> address</h1>
 
 <% form_for(@address_use) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :address_id %><br />
-    <%= f.select :address_id, Address.map_name_and_id %>
+    <%= f.label :address_id, 'choose address' %><br />
+    <%= f.select :address_id, Address.map_name_and_id, :include_blank => true %>
+		<%= link_to 'list another', new_address_path %>
   </p>
   <p>
-    <%= f.label :unit_id %><br />
-    <%= f.select :unit_id, Unit.map_name_and_id %>
+    <%= f.label :unit_id, 'or unit' %><br />
+    <%= f.select :unit_id, Unit.map_name_and_id, :include_blank => true %>
+		<%= link_to 'list another', new_unit_path %>
   </p>
   <% unless @address_use.target %>
 	  <p>
@@ -24,7 +26,7 @@
 	  <%= f.hidden_field :target_id %>
   <% end %>  
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

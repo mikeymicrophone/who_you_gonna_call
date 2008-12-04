@@ -11,5 +11,8 @@
   <%= link_to_name @detail.target %>
 </p>
 
+<%= link_to_each @detail, 'websites', 'users' %>
+<%= new_links @detail, 'website_use', 'authorization' %>
+
 <%= edit_link @detail %>
 <%= back_link %>

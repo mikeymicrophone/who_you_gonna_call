@@ -1,11 +1,10 @@
-<h1>New detail</h1>
+<h1>spill it <%= 'about ' + link_to_name(@detail.target) if @detail.target %></h1>
 
 <% form_for(@detail) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :size => '40x5' %>
   </p>
   <% unless @detail.target %>
 	  <p>
@@ -22,7 +21,7 @@
 
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

@@ -1,11 +1,10 @@
-<h1>New rendezvouz</h1>
+<h1>plan a rendezvouz <%= ' at ' + link_to_name(@rendezvouz.target) if @rendezvouz.target %></h1>
 
 <% form_for(@rendezvouz) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :time %><br />
-    <%= f.datetime_select :time %>
+    <%= f.datetime_select :time %><%= f.label :time, 'meeting time' %>
   </p>
   <% unless @rendezvouz.target %>
 	  <p>
@@ -21,7 +20,7 @@
   <% end %>  
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

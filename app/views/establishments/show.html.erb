@@ -2,5 +2,8 @@
   <%=h @establishment.name %>
 </p>
 
+<%= link_to_each @establishment, 'details', 'phones', 'websites', 'addresses', 'parties', 'calls', 'emails', 'rendezvouzs', 'visits', 'guests' %>
+<%= new_links @establishment, 'detail', 'phone_use', 'website_use', 'address_use', 'party', 'call', 'email_use', 'rendezvouz', 'alias_use', 'visit' %>
+
 <%= edit_link @establishment %>
 <%= back_link %>

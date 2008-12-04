@@ -1,27 +1,27 @@
-<h1>New address</h1>
+<h1>add an address</h1>
 
 <% form_for(@address) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :street_number %><br />
-    <%= f.text_field :street_number %>
+    <%= f.text_field :street_number, :size => 4 %><%= f.label :street_number, 'street number' %>
   </p>
   <p>
-    <%= f.label :street_id %><br />
     <%= f.select :street_id, Street.map_name_and_id %>
+		<%= link_to 'add a street', new_street_path %>
   </p>
   <p>
-    <%= f.label :line2 %><br />
+    <%= f.label :line2, 'line 2 if the building (not just a unit) needs one' %><br />
     <%= f.text_field :line2 %>
   </p>
   <p>
-    <%= f.label :zip_id %><br />
-    <%= f.select :zip_id, Zip.map_name_and_id %>
+    
+    <%= f.select :zip_id, Zip.map_name_and_id %><%= f.label :zip_id, 'zip' %>
+		<%= link_to 'another zip', new_zip_path %>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

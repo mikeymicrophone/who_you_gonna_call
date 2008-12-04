@@ -7,5 +7,8 @@
   <%=h @guest.status %>
 </p>
 
+<%= link_to_each @guest, 'details' %>
+<%= new_links @guest, 'detail' %>
+
 <%= edit_link @guest %>
 <%= back_link %>

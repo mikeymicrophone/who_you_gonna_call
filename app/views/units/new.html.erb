@@ -1,23 +1,21 @@
-<h1>New unit</h1>
+<h1>new apartment/unit</h1>
 
 <% form_for(@unit) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
+    <%= f.text_field :number %><%= f.label :number, 'apartment/unit number' %>
   </p>
   <p>
-    <%= f.label :address_id %><br />
-    <%= f.select :address_id, Address.map_name_and_id %>
+    <%= f.select :address_id, Address.map_name_and_id %><%= f.label :address_id, 'your address' %>
+    <%= link_to 'add this address', new_address_path %>
   </p>
   <p>
-    <%= f.label :line2 %><br />
-    <%= f.text_field :line2 %>
+    <%= f.text_field :line2 %><%= f.label :line2, 'line 2' %>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

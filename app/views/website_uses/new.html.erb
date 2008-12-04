@@ -1,10 +1,9 @@
-<h1>New website_use</h1>
+<h1>this website <%= 'is related to ' + link_to_name(@website_use.target) if @website_use.target %></h1>
 
 <% form_for(@website_use) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :website_id %><br />
     <%= f.select :website_id, Website.map_name_and_id %>
   </p>
   <% unless @website_use.target %>
@@ -21,7 +20,7 @@
   <% end %>  
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

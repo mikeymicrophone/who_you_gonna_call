@@ -1,22 +1,15 @@
 <h1>websites</h1>
 
 <table>
-  <tr>
-    <th>Href</th>
-    <th>Name</th>
-
-  </tr>
 
 <% for website in @websites %>
   <tr>
+	  <td><%= link_to_name website %></td>
     <td><%= link_to website.href, website.href %></td>
-    <td><%=h website.name %></td>
-
-    <td><%= link_to 'show', website %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New website', new_website_path %>
+<%= link_to 'post a site', new_website_path %>

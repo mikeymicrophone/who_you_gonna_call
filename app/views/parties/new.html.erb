@@ -1,15 +1,13 @@
-<h1>New party</h1>
+<h1>throw a party <%= 'at ' + link_to_name(@party.target) if @party.target %></h1>
 
 <% form_for(@party) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :time %><br />
-    <%= f.datetime_select :time %>
+    <%= f.datetime_select :time %><%= f.label :time, 'starting time' %>
   </p>
   <p>
-    <%= f.label :until %><br />
-    <%= f.datetime_select :until %>
+    <%= f.datetime_select :until %><%= f.label :until, 'closing time' %>
   </p>
   <% unless @party.target %>
 	  <p>
@@ -25,7 +23,7 @@
   <% end %>  
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

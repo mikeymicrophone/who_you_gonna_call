@@ -18,6 +18,8 @@ class Person < ActiveRecord::Base
   has_many :visiting_guests, :through => :visits, :source => :guests
   has_many :guests, :as => :target
   
+  group_targets_of 'guests'
+  
   def services
     aliases.map(&:service).uniq
   end

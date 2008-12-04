@@ -1,15 +1,14 @@
-<h1>New phone_use</h1>
+<h1><%= link_to_name(@phone_use.target) + ' uses this ' if @phone_use.target %> phone</h1>
 
 <% form_for(@phone_use) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :phone_id %><br />
     <%= f.select :phone_id, Phone.map_name_and_id %>
   </p>
   <% unless @phone_use.target %>
 	  <p>
-	    <%= f.select :target_type, PhoneUse.targets(:select) %>
+	    <%= f.select :target_type, PhoneUse.targets(:select) %><%= link_to 'make another', new_phone_path %>
 	  </p>
 	  <p>
 	    <%= f.label :target_id %>
@@ -21,7 +20,7 @@
   <% end %>  
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

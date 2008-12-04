@@ -1,10 +1,9 @@
-<h1>New authorization</h1>
+<h1>authorize someone <%= ' to view ' + link_to_name(@authorization.target) if @authorization.target %></h1>
 
 <% form_for(@authorization) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :user_id %><br />
     <%= f.select :user_id, User.map_name_and_id %>
   </p>
   <% unless @authorization.target %>
@@ -22,7 +21,7 @@
 
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

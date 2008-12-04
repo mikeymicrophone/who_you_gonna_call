@@ -1,16 +1,19 @@
-<p>
-  <b>Time:</b>
-  <%=h @call.time.strftime("%I:%M %p %A %m/%d") %>
-</p>
+<% past = @call.time < Time.now %>
 
 <p>
-  <%= link_to_name @call.target %>
+you need<%= 'ed' if past %> to call <%= link_to_name @call.target %> at <%=h @call.time.strftime("%I:%M %p %A %m/%d") %>
 </p>
+<% if past %>
+<%= time_ago_in_words(@call.time) %> ago.
+<% else %>
+in <%= time_ago_in_words(@call.time) %>.
+<% end %>
 
 <p>
-  <b>Status:</b>
   <%=h @call.status %>
 </p>
+
+<%= link_to_each @call, 'details' %>
 
 <%= edit_link @call %>
 <%= back_link %>

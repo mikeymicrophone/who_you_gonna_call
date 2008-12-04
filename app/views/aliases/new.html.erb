@@ -1,19 +1,18 @@
-<h1>New alias</h1>
+<h1>new alias</h1>
 
 <% form_for(@alias) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :service_id %><br />
-    <%= f.select :service_id, Service.map_name_and_id %>
+    <%= f.select :service_id, Service.map_name_and_id %><%= f.label :service_id, 'service' %>
+		<%= link_to 'another', new_service_path %>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

@@ -3,7 +3,7 @@
   <%=h @phone.name %>
 </p>
 
-<%= link_to_each @phone, 'people_from_phone_uses' %>
+<%= link_to_each @phone, 'calls', 'addresses', 'details', 'websites', 'people_from_phone_uses', 'establishments_from_phone_uses', 'websites_from_phone_uses', 'cities_from_phone_uses', 'services_from_phone_uses', 'units_from_phone_uses', 'addresses_from_phone_uses' %>
 
 <%= edit_link @phone %>
 <%= back_link %>

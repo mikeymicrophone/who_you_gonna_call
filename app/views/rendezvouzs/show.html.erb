@@ -8,5 +8,8 @@
   <%= link_to_name @rendezvouz.target %>
 </p>
 
+<%= link_to_each @rendezvouz, 'guests', 'websites' %>
+<%= new_links @rendezvouz, 'guest', 'website_use' %>
+
 <%= edit_link @rendezvouz %>
 <%= back_link %>

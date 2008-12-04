@@ -1,15 +1,14 @@
-<h1>New establishment</h1>
+<h1>one of my fave establishments</h1>
 
 <% form_for(@establishment) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><%= f.label :name, 'just the name'%>
   </p>
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

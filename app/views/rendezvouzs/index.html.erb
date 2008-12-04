@@ -1,22 +1,15 @@
 <h1>rendezvouzs</h1>
 
 <table>
-  <tr>
-    <th>Time</th>
-    <th>Target</th>
-
-  </tr>
 
 <% for rendezvouz in @rendezvouzs %>
   <tr>
-    <td><%=h rendezvouz.time %></td>
+    <td><%= link_to time_ago_in_words(rendezvouz.time), rendezvouz %></td>
     <td><%= link_to_name rendezvouz.target %></td>
-
-    <td><%= link_to 'show', rendezvouz %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New rendezvouz', new_rendezvouz_path %>
+<%= link_to 'plan a rendezvouz', new_rendezvouz_path %>

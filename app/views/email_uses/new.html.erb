@@ -1,10 +1,9 @@
-<h1>New email_use</h1>
+<h1><%= link_to_name(@email_use.target) + ' uses this ' if @email_use.target %>email</h1>
 
 <% form_for(@email_use) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :email_id %><br />
     <%= f.select :email_id, Email.map_name_and_id %>
   </p>
   <% unless @email_use.target %>
@@ -21,7 +20,7 @@
   <% end %>  
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

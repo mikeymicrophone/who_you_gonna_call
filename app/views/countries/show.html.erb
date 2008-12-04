@@ -3,10 +3,8 @@
 </p>
 <%= link_to 'new state', new_country_state_path(@country) %><br>
 
-<% @country.states.each do |s| %>
-  <%= link_to_name s %><br>
-<% end %>
-
+<%= link_to_each @country, 'states', 'cities', 'details', 'websites', 'guests', 'zips' %>
+<%= new_links @country, 'state', 'detail', 'website_use', 'visit' %>
 
 <%= edit_link @country %>
 <%= back_link %>

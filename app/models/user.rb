@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :address_uses, :foreign_key => :creator_id
   has_many :aliases, :foreign_key => :creator_id
   has_many :alias_uses, :foreign_key => :creator_id
-  has_many :authorizations, :foreign_key => :creator_id
+  has_many :granted_authorizations, :foreign_key => :creator_id, :class_name => 'Authorizations'
   has_many :calls, :foreign_key => :creator_id
   has_many :cities, :foreign_key => :creator_id
   has_many :countries, :foreign_key => :creator_id
@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
   has_many :websites, :foreign_key => :creator_id
   has_many :website_uses, :foreign_key => :creator_id
   has_many :zips, :foreign_key => :creator_id
+  
+  has_many :authorizations
+  
+  group_targets_of 'authorizations'
   
   def name
     login

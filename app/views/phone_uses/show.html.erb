@@ -1,10 +1,10 @@
 <p>
-  <%= link_to_name @phone_use.phone %>
+  <h4><%= link_to_name @phone_use.target %></h4>
+	uses  <%= link_to_name @phone_use.phone %>
 </p>
 
-<p>
-  <%= link_to_name @phone_use.target %>
-</p>
+<%= link_to_each @phone_use, 'calls', 'details' %>
+<%= new_links @phone_use, 'call', 'detail' %>
 
 <%= edit_link @phone_use %>
 <%= back_link %>

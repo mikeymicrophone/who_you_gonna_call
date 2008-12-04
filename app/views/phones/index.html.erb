@@ -1,26 +1,17 @@
 <h1>phones</h1>
 
 <table>
-  <tr>
-    <th>Number</th>
-    <th>Area code</th>
-    <th>Country code</th>
-    <th>Name</th>
-
-  </tr>
 
 <% for phone in @phones %>
   <tr>
-    <td><%=h phone.number %></td>
-    <td><%=h phone.area_code %></td>
+    <td><%= link_to_name phone %></td>
     <td><%=h phone.country_code %></td>
-    <td><%=h phone.name %></td>
-
-    <td><%= link_to 'show', phone %></td>
+    <td><%=h phone.area_code %></td>
+    <td><%=h phone.number %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New phone', new_phone_path %>
+<%= link_to 'add phone', new_phone_path %>

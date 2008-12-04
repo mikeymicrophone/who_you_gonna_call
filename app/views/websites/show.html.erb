@@ -6,5 +6,9 @@
   <%=h @website.name %>
 </p>
 
+<%= link_to_each @website, 'addresses', 'details', 'phones', 'addresses_from_website_uses', 'aliases_from_website_uses', 'cities_from_website_uses', 'countries_from_website_uses', 'details_from_website_uses', 'emails_from_website_uses', 'establishments_from_website_uses', 'messages_from_website_uses', 'parties_from_website_uses', 'people_from_website_uses', 'phones_from_website_uses', 'rendezvouzs_from_website_uses', 'services_from_website_uses', 'states_from_website_uses', 'streets_from_website_uses', 'units_from_website_uses' %>
+
+<%= new_links @website, 'detail', 'website_use', 'address_use', 'phone_use' %>
+
 <%= edit_link @website %>
 <%= back_link %>

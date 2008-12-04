@@ -1,15 +1,21 @@
+<% past = @message.time < Time.now %>
+
 <p>
-  <b>Time:</b>
+	you need<%= 'ed' if past %> to write a message to <%= link_to_name @message.person %>
+	<% if past %>
+	  <%= time_ago_in_words(@message.time) %> ago.
+	<% else %>
+		in <%= time_ago_in_words(@message.time) %>.
+	<% end %>
+	<br>
   <%=h @message.time.strftime("%I:%M %p on %A %m/%d") %>
 </p>
 
 <p>
-  <b>Service:</b>
   <%= link_to_name @message.service %>
 </p>
 
 <p>
-  <b>Status:</b>
   <%=h @message.status %>
 </p>
 

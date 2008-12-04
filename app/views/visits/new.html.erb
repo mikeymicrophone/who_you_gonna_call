@@ -1,15 +1,13 @@
-<h1>New visit</h1>
+<h1>plan a visit <%= ' to ' + link_to_name(@visit.target) if @visit.target %></h1>
 
 <% form_for(@visit) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :earliest_time %><br />
-    <%= f.datetime_select :earliest_time %>
+    <%= f.datetime_select :earliest_time %><%= f.label :earliest_time, 'the earliest I\'ll be there' %>
   </p>
   <p>
-    <%= f.label :latest_time %><br />
-    <%= f.datetime_select :latest_time %>
+    <%= f.datetime_select :latest_time %><%= f.label :latest_time, 'the latest I\'ll arrive' %>
   </p>
 
   <% unless @visit.target %>
@@ -26,7 +24,7 @@
   <% end %>  
   
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 
