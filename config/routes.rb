@@ -45,7 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :streets, :has_one => [:city], :has_many => [:addresses, :details, :parties, :rendezvouzs, :website_uses, :websites, :visits, :guests]
   
-  map.resources :addresses, :has_many => [:details, :parties, :phone_uses, :phones, :rendezvouzs, :website_uses, :websites, :visits, :address_uses], :has_one => [:street, :zip]
+  map.resources :addresses, :has_many => [:units, :details, :parties, :phone_uses, :phones, :rendezvouzs, :website_uses, :websites, :visits, :address_uses], :has_one => [:street, :zip]
   
   map.resources :units, :has_one => :address, :has_many => [:address_uses, :details, :parties, :phone_uses, :phones, :rendezvouzs, :website_uses, :websites, :visits, :guests]
   

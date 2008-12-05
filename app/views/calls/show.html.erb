@@ -14,6 +14,7 @@ in <%= time_ago_in_words(@call.time) %>.
 </p>
 
 <%= link_to_each @call, 'details' %>
+<%= new_links @call, 'detail' %>
 
 <%= edit_link @call %>
 <%= back_link %>

@@ -5,12 +5,20 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>treat women well</title>
-  <%= stylesheet_link_tag 'who_you_gonna_call' %>
+
+	<%= stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection' %>
+	<%= stylesheet_link_tag 'compiled/print.css', :media => 'print' %>
+	  <!--[if IE]>
+	    <%= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection' %>
+		<![endif]-->
+  <%= stylesheet_link_tag 'who_you_gonna_call', 'sass_base' %>
 </head>
 <body>
-	<% %w[ people calls rendezvouzs details messages txts parties guests websites aliases phones services emails establishments cities visits streets addresses units states address_uses website_uses alias_uses email_uses phone_uses countries zips users authorizations ].each do |m| %>
-	  <%= link_to m, "/#{m}" %>
-	<% end %>
+	<div id="navigation">
+		<% %w[ people calls rendezvouzs details messages txts parties guests websites aliases phones services emails establishments cities visits streets addresses units states address_uses website_uses alias_uses email_uses phone_uses countries zips users authorizations ].each do |m| %>
+		  <%= link_to m, "/#{m}", :class => 'nav' %>
+		<% end %>
+	</div>
 	<%= yield %>
 </body>
 <html>

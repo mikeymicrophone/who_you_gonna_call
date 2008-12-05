@@ -2,11 +2,13 @@
   <%=h @street.name %>
 </p>
 
-<%= link_to_each @street, 'details', 'parties', 'rendezvouzs', 'websites', 'visits', 'guests' %>
+<%= link_to_each @street, 'details', 'parties', 'rendezvouzs', 'websites', 'visits', 'guests', 'addresses' %>
 
 <p>
   <%= link_to_name @street.city %>
 </p>
+
+<%= new_links @street, 'detail', 'party', 'rendezvouz', 'website_use', 'visit', 'address'%>
 
 <%= edit_link @street %>
 <%= back_link %>
