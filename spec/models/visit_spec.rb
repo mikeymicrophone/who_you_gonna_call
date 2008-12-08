@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Visit do
   before(:each) do
     @valid_attributes = {
-      :time => Time.now,
+      :earliest_time => Time.now,
       :target_type => "value for target_type",
       :target_id => "1",
       :creator_id => "1"
