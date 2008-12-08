@@ -71,15 +71,28 @@ class ApplicationController < ActionController::Base
 end
 
 class ActiveRecord::Base
-  def self.scope_down controller, parameters, *associated_ids
+  def self.scope_down controller, parameters, *associated_ids#, transitive_ids = {}
     set = nil
     associated_ids.each do |c|
       if set.nil? && parameters["#{c}_id"]
-        scope_object = c.capitalize.constantize.send(:find, parameters["#{c}_id"])
+        scope_object = c.camelize.constantize.send(:find, parameters["#{c}_id"])
         controller.instance_variable_set("@#{c}", scope_object)
+        controller.instance_variable_set("@scope_object", scope_object)
         set = scope_object.send(self.name.underscore.pluralize)
       end
     end
+    transitive_ids = {} # not correctly implemented yet
+    set || transitive_ids.each do |k, v|
+      v.each do |c|
+        if set.nil? && parameters["#{c}_id"]
+          scope_object = c.camelize.constantize.send(:find, parameters["#{c}_id"])
+          controller.instance_variable_set("@#{c}", scope_object)
+          controller.instance_variable_set("@scope_object", scope_object)
+          set = scope_object.send(k).send(c).map(&:target)
+        end
+      end
+    end
+    
     return set || all
   end
   

@@ -11,5 +11,8 @@
   <%= link_to_name @visit.target %>
 </p>
 
+<%= link_to_each @visit, 'guests' %>
+<%= new_links @visit, 'guest' %>
+
 <%= edit_link @visit %>
 <%= back_link %>

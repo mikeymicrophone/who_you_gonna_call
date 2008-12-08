@@ -5,7 +5,7 @@ class Guest < ActiveRecord::Base
   has_many :details, :as => :target
   
   def self.target_list
-    %w[ rendezvouz visit party ]
+    %w[ rendezvouz visit party street ]
   end
   
   scope_targets

@@ -1,20 +1,14 @@
-<h1>cities</h1>
+<h1><%= link_to_name(@scope_object) + ':' if @scope_object %>cities</h1>
 
 <table>
-  <tr>
-    <th></th>
-    <th>state</th>
-
-  </tr>
-
 <% for city in @cities %>
   <tr>
     <td><%= link_to_name city %></td>
-    <td><%= link_to_name city.state %></td>
+    <td><%= link_to_name city.state unless @state %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'new city', new_city_path %>
+<%= scoped_new_link :city %>
