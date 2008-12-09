@@ -45,6 +45,7 @@ module ApplicationHelper
   end
   
   def scoped_collection_path obj, scope_object = nil
+    return collection_path obj unless scope_object
     controller.send scope_object.class.name.underscore + '_' + collection(obj) + '_path', scope_object
   end
   
@@ -69,8 +70,10 @@ module ApplicationHelper
   def collection obj
     if obj.is_a? String
       obj
+    elsif obj.is_a? Symbol
+      obj.to_s
     else
-      obj.class.name.underscore.pluralize
-    end    
+      obj.class.name.underscore
+    end.pluralize
   end
 end
