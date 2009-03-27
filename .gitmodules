@@ -4,3 +4,9 @@
 [submodule "vendor/plugins/rails_footnotes"]
 	path = vendor/plugins/rails_footnotes
 	url = git://github.com/drnic/rails-footnotes.git
+[submodule "vendor/plugins/haml"]
+	path = vendor/plugins/haml
+	url = git://github.com/nex3/haml.git
+[submodule "vendor/rails"]
+	path = vendor/rails
+	url = git://github.com/rails/rails.git

@@ -8,6 +8,6 @@ class PeopleHaveCreator < ActiveRecord::Migration
   def self.down
     remove_column :people, :creator_id
     remove_column :visits, :latest_time
-    rename_column :visits, :earliest_time, :latest_time
+    rename_column :visits, :earliest_time, :time
   end
 end

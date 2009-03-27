@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   has_many :authorizations
   
   group_targets_of 'authorizations'
-  
+  default_scope
   def name
     login
   end

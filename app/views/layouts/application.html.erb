@@ -19,6 +19,14 @@
 		  <%= link_to m, "/#{m}", :class => 'nav' %>
 		<% end %>
 	</div>
+	<div id="login_stuff">
+		<% if current_user %>
+		  <%= link_to 'logout', logout_path %>
+		<% else %>
+		  <%= link_to 'log in', login_path %>|
+		  <%= link_to 'sign up', signup_path %>
+		<% end %>
+	</div>
 	<%= yield %>
 </body>
 <html>

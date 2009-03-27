@@ -25,7 +25,7 @@
 </p>
 
 <p>
-	also logged in <%= time_ago_in_words @user.last_login_at %> ago
+  <%=	"also logged in #{time_ago_in_words @user.last_login_at} ago" if @user.last_login_at %>
 </p>
 
 <%= back_link %>
